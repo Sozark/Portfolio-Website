@@ -1,1 +1,169 @@
-/* Place CSS styles here */
+h1{
+    color: #3bff33;
+  }
+  h2 {
+    color: #3bff33;
+  }
+  h3{
+    color: #3bff33;
+  }
+  
+  li{
+    color: #3bff33;
+  }
+  
+  p{
+    color: #3bff33;
+  }
+  
+  
+  .button{
+    background-color: #000000;
+    color:#3bff33
+  }
+  
+  .btn_animation{
+      font-weight: 700;
+      overflow: hidden;
+      font-size: 2rem;
+      width: 100%; 
+      height: 100px;
+      justify-content: center;
+      align-items: center;
+      display: flex; 
+      text-transform: capitalize;
+      line-height: 2.5rem ;
+      background-color: black;
+      position: relative;
+      box-shadow: rgba(68, 68, 148, 0.25) 0px 50px 100px -20px, rgba(254, 31, 31, 0.756) 0px 30px 60px -30px, rgba(28, 49, 139, 0.35) 0px -2px 6px 0px inset;
+  }
+  
+  .btn_animation span:nth-child(1){
+      position: absolute;
+      top: 0rem; 
+      left: 0rem;
+      width: 5px; 
+      height: 100%;
+      background-image: linear-gradient(to right, #171618, #3bff33);
+      animation: animimation1 2s linear infinite; 
+      -webkit-animation: animation1 2s linear infinite;
+  }
+  
+  .btn_animation span:nth-child(2){
+      position: absolute;
+      top: 0rem; 
+      right: 0rem;
+      width: 5px; 
+      height: 100%;
+      background-image: linear-gradient(to right, #171618, #3bff33);
+      animation: animimation2 2s linear infinite; 
+      -webkit-animation: animation2 2s linear infinite;
+      
+  }
+  
+  .btn_animation span:nth-child(3){
+    position: absolute;
+    bottom: 0rem; 
+    left: 0rem;
+    width: 100%; 
+    height: 5px;
+    background-image: linear-gradient(to right, #171618, #3bff33);
+    animation: animimation3 2s linear infinite; 
+    -webkit-animation: animation3 3s linear infinite;
+  }
+  
+  .btn_animation span:nth-child(4){
+    position: absolute;
+    top: 0rem; 
+    left: 0rem;
+    width: 100%; 
+    height: 5px;
+    background-image: linear-gradient(to left, #171618, #3bff33);
+    animation: animimation4 2s linear infinite; 
+    -webkit-animation: animation4 3s linear infinite;
+    animation-delay: 1s;
+  }
+  
+  
+  
+  /* This is to animate Shrek*/
+  @keyframes animate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    
+    100%{
+        filter: hue-rotate(360deg);
+    }
+    }
+  /* These are to animate the green loading bars on the top of the page*/
+  @keyframes animation1{
+    0% {
+      transform: translateY(100%);
+    }
+    100%{
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes animation2{
+      0% {
+        transform: translateY(-100%);
+      }
+      100%{
+        transform: translateY(100%);
+      }
+    }
+  
+    @keyframes animation3{
+      0% {
+        transform: translateX(-100%);
+      }
+      100%{
+        transform: translateX(100%);
+      }
+    }
+    
+    @keyframes animation4{
+    0% {
+      transform: translateX(100%);
+    }
+    100%{
+      transform: translateX(-100%);
+    }
+    }  
+  
+    @media only screen and (mid-width: 600px) {
+  
+    }
+    
+  
+  
+  a:link, a:visited { 
+      text-align: center; 
+      color: #ff64ea;   
+  }
+  
+  a:hover{
+      color: #ee097f
+  }
+  
+  a:active {
+      color: #3df0fd;
+    }
+  body{
+      background-color: rgb(6, 6, 6);
+  }
+  
+  
+  
+  .Shrek-wrapper{
+      width: 100px;
+  }
+  
+  .Shrek-wrapper img{
+      animation: animate 3s linear infinite;
+      align-items: flex-end;
+      width: 60px;
+  }
+ 
