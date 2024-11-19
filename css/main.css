@@ -1,4 +1,5 @@
 h1{
+    font-family: "Matrix", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #3bff33;
   }
   h2 {
@@ -15,10 +16,19 @@ h1{
   p{
     color: #3bff33;
   }
+
+  .CenterBox {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: 3px solid #3bff33;
+    padding: 10px;
+  }
   
   
   .button{
-    background-color: #000000;
+    background-color: #ffffff;
     color:#3bff33
   }
   
@@ -35,7 +45,7 @@ h1{
       line-height: 2.5rem ;
       background-color: black;
       position: relative;
-      box-shadow: rgba(68, 68, 148, 0.25) 0px 50px 100px -20px, rgba(254, 31, 31, 0.756) 0px 30px 60px -30px, rgba(28, 49, 139, 0.35) 0px -2px 6px 0px inset;
+      box-shadow: rgba(68, 68, 148, 0.25) 0px 50px 100px -20px, #3bff33 0px 30px 60px -30px, rgba(28, 49, 139, 0.35) 0px -2px 6px 0px inset;
   }
   
   .btn_animation span:nth-child(1){
@@ -136,34 +146,9 @@ h1{
     @media only screen and (mid-width: 600px) {
   
     }
+
+    @font-face {
+        font-family: 'Matrix';
     
-  
-  
-  a:link, a:visited { 
-      text-align: center; 
-      color: #ff64ea;   
-  }
-  
-  a:hover{
-      color: #ee097f
-  }
-  
-  a:active {
-      color: #3df0fd;
     }
-  body{
-      background-color: rgb(6, 6, 6);
-  }
-  
-  
-  
-  .Shrek-wrapper{
-      width: 100px;
-  }
-  
-  .Shrek-wrapper img{
-      animation: animate 3s linear infinite;
-      align-items: flex-end;
-      width: 60px;
-  }
- 
+    
