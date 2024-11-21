@@ -1,5 +1,5 @@
 h1{
-    font-family: "Matrix", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Matrix', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #3bff33;
   }
   h2 {
@@ -25,131 +25,62 @@ h1{
     background-color: black;
   }
 
+  canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0; 
+      bottom: 0; 
+  }
+
+  .responsive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-gap: 0.25rem;
+}
+
   .CenterBox {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 100%;
+    border: 3px solid #3bff33;
+    padding: 10px;
+  }
+
+  .IconBox {
+    display: block;
+    border: 3px solid #3bff33;
+    padding: 10px;
+  }
+  .IconBox2 {
+    display: block;
+    border: 3px solid #3bff33;
+    padding: 10px;
+  }
+  .IconBox3 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid #3bff33;
+    padding: 10px;
+  }
+  .IconBox4 {
+    display: block;
+    border: 3px solid #3bff33;
+    padding: 10px;
+  }
+  .IconBox5 {
+    display: block;
+    border: 3px solid #3bff33;
+    padding: 10px;
+  }
+  .IconBox6 {
+    display: block;
     border: 3px solid #3bff33;
     padding: 10px;
   }
   
-  
-  .button{
-    background-color: #ffffff;
-    color:#3bff33
-  }
-  
-  .btn_animation{
-      font-weight: 700;
-      overflow: hidden;
-      font-size: 2rem;
-      width: 100%; 
-      height: 100px;
-      justify-content: center;
-      align-items: center;
-      display: flex; 
-      text-transform: capitalize;
-      line-height: 2.5rem ;
-      background-color: #000000;
-      position: relative;
-      box-shadow: rgba(68, 68, 148, 0.25) 0px 50px 100px -20px, #3bff33 0px 30px 60px -30px, rgba(28, 49, 139, 0.35) 0px -2px 6px 0px inset;
-  }
-  
-  .btn_animation span:nth-child(1){
-      position: absolute;
-      top: 0rem; 
-      left: 0rem;
-      width: 5px; 
-      height: 100%;
-      background-image: linear-gradient(to right, #171618, #3bff33);
-      animation: animimation1 2s linear infinite; 
-      -webkit-animation: animation1 2s linear infinite;
-  }
-  
-  .btn_animation span:nth-child(2){
-      position: absolute;
-      top: 0rem; 
-      right: 0rem;
-      width: 5px; 
-      height: 100%;
-      background-image: linear-gradient(to right, #171618, #3bff33);
-      animation: animimation2 2s linear infinite; 
-      -webkit-animation: animation2 2s linear infinite;
-      
-  }
-  
-  .btn_animation span:nth-child(3){
-    position: absolute;
-    bottom: 0rem; 
-    left: 0rem;
-    width: 100%; 
-    height: 5px;
-    background-image: linear-gradient(to right, #171618, #3bff33);
-    animation: animimation3 2s linear infinite; 
-    -webkit-animation: animation3 3s linear infinite;
-  }
-  
-  .btn_animation span:nth-child(4){
-    position: absolute;
-    top: 0rem; 
-    left: 0rem;
-    width: 100%; 
-    height: 5px;
-    background-image: linear-gradient(to left, #171618, #3bff33);
-    animation: animimation4 2s linear infinite; 
-    -webkit-animation: animation4 3s linear infinite;
-    animation-delay: 1s;
-  }
-  
-  
-  
-  /* This is to animate Shrek*/
-  @keyframes animate {
-    0% {
-        filter: hue-rotate(0deg);
-    }
-    
-    100%{
-        filter: hue-rotate(360deg);
-    }
-    }
-  /* These are to animate the green loading bars on the top of the page*/
-  @keyframes animation1{
-    0% {
-      transform: translateY(100%);
-    }
-    100%{
-      transform: translateX(-100%);
-    }
-  }
-  
-  @keyframes animation2{
-      0% {
-        transform: translateY(-100%);
-      }
-      100%{
-        transform: translateY(100%);
-      }
-    }
-  
-    @keyframes animation3{
-      0% {
-        transform: translateX(-100%);
-      }
-      100%{
-        transform: translateX(100%);
-      }
-    }
-    
-    @keyframes animation4{
-    0% {
-      transform: translateX(100%);
-    }
-    100%{
-      transform: translateX(-100%);
-    }
-    }  
   
     @media only screen and (mid-width: 600px) {
   
@@ -157,6 +88,7 @@ h1{
 
     @font-face {
         font-family: 'Matrix';
+        src: url(matrix.ttf);  
     
     }
     
