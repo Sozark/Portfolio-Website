@@ -21,6 +21,10 @@ h1{
     color: #3bff33;
   }
 
+  body{
+    background-color: black;
+  }
+
   .CenterBox {
     display: block;
     margin-left: auto;
@@ -47,7 +51,7 @@ h1{
       display: flex; 
       text-transform: capitalize;
       line-height: 2.5rem ;
-      background-color: #ffffff;
+      background-color: #000000;
       position: relative;
       box-shadow: rgba(68, 68, 148, 0.25) 0px 50px 100px -20px, #3bff33 0px 30px 60px -30px, rgba(28, 49, 139, 0.35) 0px -2px 6px 0px inset;
   }
