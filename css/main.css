@@ -29,6 +29,41 @@ h1{
   body{
     font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: black;
+    margin: 0; 
+    overflow-x: hidden;
+  }
+
+  header{
+    text-align: center;
+    padding: 20px;
+    font-size: 50px;
+    border-bottom: 2px solid #0f0;
+  }
+
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+    padding: 40px;
+    max-width: 900px;
+    margin: auto; 
+  }
+
+  .card{
+    border: 2px solid#0f0;
+    padding: 20px; 
+    text-align: center; 
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #0f0;
+  }
+
+  .card img {
+    max-width: 50px; 
+    margin-bottom: 15px; 
   }
 
   canvas {
