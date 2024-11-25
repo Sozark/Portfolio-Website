@@ -1,27 +1,33 @@
 h1{
-    font-family: 'Matrix', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #3bff33;
   }
   h2 {
+    font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #3bff33;
   }
   h3{
+    font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #3bff33;
   }
   
   li{
+    font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #3bff33;
   }
   
   p{
+    font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #3bff33;
   }
 
   a{
+    font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #3bff33;
   }
 
   body{
+    font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: black;
   }
 
@@ -44,6 +50,7 @@ h1{
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+    background-color: dimgrey;
     border: 3px solid #3bff33;
     padding: 10px;
   }
@@ -52,11 +59,17 @@ h1{
     display: block;
     border: 3px solid #3bff33;
     padding: 10px;
+    width: 50px;
+    height: 75px;
   }
   .IconBox2 {
     display: block;
     border: 3px solid #3bff33;
     padding: 10px;
+    width: 50px;
+    height: 75px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .IconBox3 {
     display: block;
@@ -64,21 +77,29 @@ h1{
     margin-right: auto;
     border: 3px solid #3bff33;
     padding: 10px;
+    width: 50px;
+    height: 75px;
   }
   .IconBox4 {
     display: block;
     border: 3px solid #3bff33;
     padding: 10px;
+    width: 50px;
+    height: 75px;
   }
   .IconBox5 {
     display: block;
     border: 3px solid #3bff33;
     padding: 10px;
+    width: 50px;
+    height: 75px;
   }
   .IconBox6 {
     display: block;
     border: 3px solid #3bff33;
     padding: 10px;
+    width: 50px;
+    height: 75px;
   }
   
   
