@@ -66,6 +66,10 @@ h1{
     margin-bottom: 15px; 
   }
 
+  footer {
+
+  }
+
   canvas {
       position: absolute;
       top: 0;
@@ -78,73 +82,10 @@ h1{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     grid-gap: 0.25rem;
-}
-
-  .CenterBox {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    background-color: dimgrey;
-    border: 3px solid #3bff33;
-    padding: 10px;
-  }
-
-  .IconBox {
-    display: block;
-    border: 3px solid #3bff33;
-    padding: 10px;
-    width: 50px;
-    height: 75px;
-  }
-  .IconBox2 {
-    display: block;
-    border: 3px solid #3bff33;
-    padding: 10px;
-    width: 50px;
-    height: 75px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .IconBox3 {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border: 3px solid #3bff33;
-    padding: 10px;
-    width: 50px;
-    height: 75px;
-  }
-  .IconBox4 {
-    display: block;
-    border: 3px solid #3bff33;
-    padding: 10px;
-    width: 50px;
-    height: 75px;
-  }
-  .IconBox5 {
-    display: block;
-    border: 3px solid #3bff33;
-    padding: 10px;
-    width: 50px;
-    height: 75px;
-  }
-  .IconBox6 {
-    display: block;
-    border: 3px solid #3bff33;
-    padding: 10px;
-    width: 50px;
-    height: 75px;
-  }
-  
+}  
   
     @media only screen and (mid-width: 600px) {
   
     }
 
-    @font-face {
-        font-family: 'Matrix';
-        src: url(matrix.ttf);  
-    
-    }
     
