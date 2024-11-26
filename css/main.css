@@ -1,29 +1,35 @@
 h1{
     font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #3bff33;
+    backdrop-filter: blur(1.5px);
   }
   h2 {
     font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #3bff33;
+    backdrop-filter: blur(1.5px);
   }
   h3{
     font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #3bff33;
+    backdrop-filter: blur(1.5px);
   }
   
   li{
     font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #3bff33;
+    backdrop-filter: blur(1.5px);
   }
   
   p{
     font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #3bff33;
+    backdrop-filter: blur(1.5px);
   }
 
   a{
     font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #3bff33;
+    backdrop-filter: blur(1.5px);
   }
 
   body{
@@ -38,6 +44,8 @@ h1{
     padding: 20px;
     font-size: 50px;
     border-bottom: 2px solid #0f0;
+    color: #0f0;
+    backdrop-filter: blur(1.5px);
   }
 
   .grid{
@@ -67,7 +75,15 @@ h1{
   }
 
   footer {
+    border-top: 2px solid #0f0;
+    color: #0f0;
+    backdrop-filter: blur(0.5px);
+    padding: 4px; 
+  }
 
+  .mobile-nav-wrapper {
+    position: relative;
+    z-index: 1;
   }
 
   canvas {
