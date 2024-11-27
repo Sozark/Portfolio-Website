@@ -1,115 +1,92 @@
-h1{
-    font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #3bff33;
-    backdrop-filter: blur(1.5px);
-  }
-  h2 {
-    font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #3bff33;
-    backdrop-filter: blur(1.5px);
-  }
-  h3{
-    font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #3bff33;
-    backdrop-filter: blur(1.5px);
-  }
-  
-  li{
-    font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #3bff33;
-    backdrop-filter: blur(1.5px);
-  }
-  
-  p{
-    font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #3bff33;
-    backdrop-filter: blur(1.5px);
-  }
 
-  a{
-    font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #3bff33;
-    backdrop-filter: blur(1.5px);
-  }
+body {
+  margin: 0;
+  background: black;
+  overflow: hidden;
+  color: #0f0;
+  font-family: 'Courier New', monospace;
+}
 
-  body{
-    font-family: 'Courier New', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: black;
-    margin: 0; 
-    overflow-x: hidden;
-  }
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Background canvas */
+}
 
-  i {
-    backdrop-filter: blur(.5px);  
-  }
+header {
+  text-align: center;
+  padding: 20px;
+  font-size: 2em;
+  color: #0f0;
+}
 
-  header{
-    text-align: center;
-    padding: 20px;
-    font-size: 50px;
-    border-bottom: 2px solid #0f0;
-    color: #0f0;
-    backdrop-filter: blur(1.5px);
-  }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: black;
+  border-bottom: 2px solid #0f0;
+}
 
-  .grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px; 
-    padding: 40px;
-    max-width: 900px;
-    margin: auto; 
-  }
+.hamburger-menu i {
+  cursor: pointer;
+  font-size: 24px;
+}
 
-  .card{
-    border: 2px solid#0f0;
-    padding: 20px; 
-    text-align: center; 
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
+.links {
+  display: none; /* Hidden by default for dropdown */
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  background: black;
+  border-top: 1px solid #0f0;
+}
 
-  .card:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px #0f0;
-  }
+.links a {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #0f0;
+  text-align: center;
+}
 
-  .card img {
-    max-width: 50px; 
-    margin-bottom: 15px; 
-  }
+.links a:hover {
+  background: #0f0;
+  color: black;
+}
 
-  .hamburgerButton {
-    color:#0f0; 
-  }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
+}
 
-  footer {
-    border-top: 2px solid #0f0;
-    color: #0f0;
-    backdrop-filter: blur(0.5px);
-    padding: 4px; 
-  }
+.card {
+  border: 2px solid #0f0;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-  .mobile-nav-wrapper {
-    position: relative;
-    z-index: 1;
-  }
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #0f0;
+}
 
-  canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0; 
-      bottom: 0; 
-  }
+footer {
+  text-align: center;
+  padding: 10px;
+  background: black;
+  color: #0f0;
+  border-top: 2px solid #0f0;
+}
 
-  .responsive {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    grid-gap: 0.25rem;
-}  
-  
-    @media only screen and (mid-width: 600px) {
-  
-    }
-
-    
+.heading {
+  font-size: 30px;
+}
