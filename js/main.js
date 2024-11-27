@@ -64,7 +64,6 @@ function draw() {
         context.font = stripFontSize[j]+'px MatrixCode';
         context.textBaseline = 'top';
         context.textAlign = 'center';
-        
         if (stripY[j] > 1358) {
             stripX[j] = Math.floor(Math.random()*canvas.width);
             stripY[j] = -100;
@@ -78,7 +77,7 @@ function draw() {
   setTimeout(draw, 70);
 }
 
-function PortfilioMenu() { 
+function PortfolioMenu() { 
     const Portfolio = document.querySelector('.links'); 
   
     if (Portfolio.style.display === "none") { 
