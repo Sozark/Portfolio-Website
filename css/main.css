@@ -26,7 +26,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background: black;
   border-bottom: 2px solid #0f0;
 }
 
@@ -82,11 +81,11 @@ header {
 footer {
   text-align: center;
   padding: 10px;
-  background: black;
   color: #0f0;
   border-top: 2px solid #0f0;
 }
 
 .heading {
   font-size: 30px;
+  color:#0f0; 
 }
