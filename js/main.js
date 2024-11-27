@@ -78,4 +78,15 @@ function draw() {
   setTimeout(draw, 70);
 }
 
+function PortfilioMenu() { 
+    const Portfolio = document.querySelector('.links'); 
+  
+    if (Portfolio.style.display === "none") { 
+        Portfolio.style.display = "block"; 
+    } 
+    else { 
+        Portfolio.style.display = "none"; 
+    } 
+} 
+
 
