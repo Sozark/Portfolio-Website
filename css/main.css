@@ -39,6 +39,10 @@ h1{
     overflow-x: hidden;
   }
 
+  i {
+    backdrop-filter: blur(.5px);  
+  }
+
   header{
     text-align: center;
     padding: 20px;
