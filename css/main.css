@@ -5,6 +5,7 @@ body {
   overflow: hidden;
   color: #0f0;
   font-family: 'Courier New', monospace;
+  backdrop-filter: blur(.5px);
 }
 
 canvas {
@@ -12,6 +13,7 @@ canvas {
   top: 0;
   left: 0;
   z-index: -1; /* Background canvas */
+  
 }
 
 header {
@@ -32,6 +34,7 @@ header {
 .hamburger-menu i {
   cursor: pointer;
   font-size: 24px;
+  backdrop-filter: blur(.5px);
 }
 
 .links {
@@ -88,4 +91,16 @@ footer {
 .heading {
   font-size: 30px;
   color:#0f0; 
+}
+
+.fa-bars {
+  color: #00ff00; /* Matrix green */
+  font-size: 24px; /* Adjust the size of the icon */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: color 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* Hover Effect for Hamburger Icon */
+.fa-bars:hover {
+  color: #0f0; /* Optional hover effect */
 }
