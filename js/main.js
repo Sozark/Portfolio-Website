@@ -87,3 +87,18 @@ function PortfolioMenu() {
         Portfolio.style.display = "none"; 
     } 
 } 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const dropdownLinks = document.querySelector('.dropdown-links');
+  
+    // Toggle the menu visibility
+    menuToggle.addEventListener('click', () => {
+      if (dropdownLinks.style.display === 'flex') {
+        dropdownLinks.style.display = 'none';
+      } else {
+        dropdownLinks.style.display = 'flex';
+      }
+    });
+  });
+  

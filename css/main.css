@@ -1,66 +1,79 @@
+
 body {
   margin: 0;
   background: black;
+  background-color: black;
   overflow: hidden;
   color: #0f0;
   font-family: 'Courier New', monospace;
-  backdrop-filter: blur(.5px);
 }
 
 canvas {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1; /* Background canvas */
-  
+  width: 100%; /* Ensure it covers the full viewport */
+  height: 100%; /* Ensure it covers the full viewport */
+  z-index: -1;
+    /* Push it behind other content */
 }
 
-header {
+/* Header */
+.site-header {
   text-align: center;
   padding: 20px;
   font-size: 2em;
   color: #0f0;
-  backdrop-filter: blur(.5px);
 }
 
+/* Navbar */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 10px 20px;
   border-bottom: 2px solid #0f0;
-  backdrop-filter: blur(.5px);
 }
 
-.hamburger-menu i {
-  cursor: pointer;
+.menu-toggle {
   font-size: 24px;
-  backdrop-filter: blur(.5px);
+  color: #00ff00;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.links {
-  display: none; /* Hidden by default for dropdown */
+.menu-toggle:hover {
+  transform: scale(1.2);
+}
+
+.dropdown-links {
+  display: none;
   flex-direction: column;
   position: absolute;
-  top: 50px;
+  top: 60px;
   left: 0;
   width: 100%;
   background: black;
   border-top: 1px solid #0f0;
+  box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+  animation: dropdown 0.3s ease-in-out;
 }
 
-.links a {
-  padding: 10px 20px;
+.dropdown-link {
+  padding: 15px 20px;
   text-decoration: none;
   color: #0f0;
   text-align: center;
+  transition: background-color 0.2s, transform 0.2s;
 }
 
-.links a:hover {
-  background: #0f0;
+.dropdown-link:hover {
+  background-color: #0f0;
   color: black;
+  transform: scale(1.1);
 }
 
+/* Grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -68,23 +81,43 @@ header {
   padding: 40px;
   max-width: 900px;
   margin: auto;
-  backdrop-filter: blur(.5px);
 }
 
-.aboutGrid {
+/* About Page Grid */
+.Aboutgrid {
   display: grid;
-  gap: 20px;
+  grid-template-columns: 1fr;
   padding: 40px;
   max-width: 900px;
   margin: auto;
-  backdrop-filter: blur(.5px);
+}
 
+.Aboutgrid .card {
+  border: 2px solid #0f0;
+  padding: 20px;
+  text-align: left;
+  color: #00ff00;
+  font-family: 'Courier New', monospace;
+  background: black;
+  box-shadow: 0 0 10px #0f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Aboutgrid .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #0f0;
 }
 
 .card {
-  border: 2px solid #0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  border: 2px solid #0f0;
   padding: 20px;
+  text-decoration: none;
+  color: #00ff00;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -93,26 +126,22 @@ header {
   box-shadow: 0 0 10px #0f0;
 }
 
-footer {
+/* Footer */
+.site-footer {
   text-align: center;
   padding: 10px;
   color: #0f0;
   border-top: 2px solid #0f0;
 }
 
-.heading {
-  font-size: 30px;
-  color:#0f0; 
-}
-
-.fa-bars {
-  color: #00ff00; /* Matrix green */
-  font-size: 24px; /* Adjust the size of the icon */
-  cursor: pointer; /* Change cursor to pointer on hover */
-  transition: color 0.3s ease; /* Add a smooth transition effect */
-}
-
-/* Hover Effect for Hamburger Icon */
-.fa-bars:hover {
-  color: #0f0; /* Optional hover effect */
+/* Dropdown Animation */
+@keyframes dropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
