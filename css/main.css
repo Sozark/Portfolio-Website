@@ -2,7 +2,7 @@
 body {
   margin: 0;
   background: black;
-  background-color: black;
+  background-color: #0D0208 ;
   overflow: hidden;
   color: #0f0;
   font-family: 'Courier New', monospace;
@@ -81,6 +81,7 @@ canvas {
   padding: 40px;
   max-width: 900px;
   margin: auto;
+  background-color: #003B00;
 }
 
 /* About Page Grid */
