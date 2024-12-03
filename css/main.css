@@ -1,19 +1,19 @@
-
+/* General Body */
 body {
   margin: 0;
   background: black;
-  overflow: hidden;
   color: #0f0;
   font-family: 'Courier New', monospace;
 }
 
+/* Canvas for Matrix Animation */
 canvas {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* Ensure it covers the full viewport */
-  height: 100%; /* Ensure it covers the full viewport */
-  z-index: -1; /* Push it behind other content */
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 /* Header */
@@ -31,17 +31,16 @@ canvas {
   align-items: center;
   padding: 10px 20px;
   border-bottom: 2px solid #0f0;
-  position: relative;
   background: black;
 }
 
 .hamburger-menu {
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .menu-toggle {
   font-size: 24px;
-  color: #00ff00;
+  color: #0f0;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -52,7 +51,7 @@ canvas {
 
 /* Dropdown Links */
 .dropdown-links {
-  display: none; /* Initially hidden */
+  display: none;
   flex-direction: column;
   position: absolute;
   top: 50px;
@@ -67,45 +66,64 @@ canvas {
 .dropdown-link {
   padding: 15px 20px;
   text-decoration: none;
-  color: #0f0;
+  color: #0f0; /* Default green */
   text-align: center;
   transition: background-color 0.2s, transform 0.2s;
 }
 
 .dropdown-link:hover {
-  background-color: #0f0;
+  background-color: #00ff00; /* Bright green on hover */
   color: black;
   transform: scale(1.1);
 }
 
-/* Show Dropdown Links */
+.dropdown-link:visited {
+  color: #0f0; /* Prevent visited links from turning purple */
+}
+
 .dropdown-links.active {
   display: flex;
 }
 
-/* Grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 40px;
-  max-width: 1200px;
-  margin: auto;
-  background: black;
+/* Font Awesome Icons */
+.fa {
+  color: #0f0; /* Green for icons */
+  transition: color 0.2s ease;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border: 2px solid #0f0;
-  padding: 20px;
-  text-decoration: none;
+.fa:hover {
+  color: #00ff00; /* Brighter green on hover */
+}
+
+.fa:visited {
+  color: #0f0; /* Prevent purple visited state */
+}
+
+.fa-solid {
   color: #00ff00;
-  transition: transform 0.3s, box-shadow 0.3s;
-  background-color: black;
+}
+
+.fa-github {
+  color: #00ff00;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Card Styling */
+.card {
+  border: 2px solid #0f0;
+  text-align: center;
+  padding: 10px;
+  background: black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
@@ -113,13 +131,25 @@ canvas {
   box-shadow: 0 0 20px #0f0;
 }
 
-.card i {
-  font-size: 2em;
+.card img {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
   margin-bottom: 10px;
+}
+
+.card video {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  border-bottom: 2px solid #0f0;
 }
 
 .card p {
   margin-top: 5px;
+  color: #0f0;
+  font-size: 1.1em;
 }
 
 /* Footer */
@@ -129,6 +159,64 @@ canvas {
   color: #0f0;
   border-top: 2px solid #0f0;
 }
+/* Form Container */
+.form-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: black;
+  border: 2px solid #0f0;
+  box-shadow: 0 0 15px #0f0;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form label {
+  color: #0f0;
+  font-size: 1.2em;
+}
+
+form input,
+form textarea {
+  background-color: black;
+  color: #0f0;
+  border: 2px solid #0f0;
+  padding: 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 1em;
+  border-radius: 4px;
+  outline: none;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #00ff00;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+form button {
+  background-color: #0f0;
+  color: black;
+  border: 2px solid #0f0;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  font-family: 'Courier New', monospace;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+form button:hover {
+  background-color: black;
+  color: #0f0;
+  box-shadow: 0 0 10px #0f0;
+}
+
 
 /* Dropdown Animation */
 @keyframes dropdown {

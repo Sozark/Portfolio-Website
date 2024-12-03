@@ -1,90 +1,52 @@
 <!doctype html>
-<html class="no-js" lang="en">
-
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>3D Models</title>
-  <meta name="description" content="This site will serve as the hub for many sub responsive layouts">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-
-  <link rel="icon" href="img/favicon_io/favicon.ico" type="/img/favicon_io">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-
   <script src="https://kit.fontawesome.com/d0041be44b.js" crossorigin="anonymous"></script>
-
-  <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
-
-  <!-- Place your site's HTML here -->
-  <script src="js/main.js"></script>
-  
-  <div class="mobile-nav-wrapper">
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()"></a>
-  
-  <header>
-  3D Models
-  </header>
-
-  <div class="container">
-    <div class="navbar">
-        <div class="heading">
-            <a href="hamburger-icon" onclick="portfolioMenu()">
-                <i class="fa fa-bars"></i>
-            </a>
-          
-        </div>
-        <div class="links">
-            <a href="Github"> Github </a>
-            <a href="Music"> Music </a>
-            <a href="Art"> Art </a>
-            <a href="3DModels"> 3D Models </a>
-            <a href="Music"> Music  </a>
-            <a href="Contact"> Contact </a>
-        </div>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="hamburger-menu">
+      <i class="fa fa-bars menu-toggle"></i> <!-- Hamburger Icon -->
     </div>
-</div>
-
-  <div class = "grid">
-    <div class = "card">
-      <i class="fa-solid fa-palette" style="color: #00ff00;"></i> <!--You must put these styles in the CSS folder or you will lose points-->
-       <p>Art</p>
-    </div>
-    <div class="card">
-      <i class="fa-brands fa-github" style = "color: #00ff00;"></i>
-      <p>GitHub</p>
-    </div>
-    <div class="card">
-      <i class="fa-solid fa-video" style="color: #00ff00;"></i>
-      <p>Videos</p>
-    </div>
-    <div class="card">
-      <i class="fa-solid fa-cube" style ="color: #00ff00;"></i>
-      <p>3D Models</p>
-    </div>
-    <div class="card">
-      <i class="fa-solid fa-music" style="color: #00ff00;"></i>
-      <p>Music</p>
-    </div>
-    <div class="card">
-      <i class="fa-solid fa-phone" style="color: #00ff00;"></i>
-      <p>Contact</p>
+    <div class="dropdown-links">
+      <a href="index.html" class="dropdown-link">Home</a>
+      <a href="art.html" class="dropdown-link">Art</a>
+      <a href="videos.html" class="dropdown-link">Videos</a>
+      <a href="github.html" class="dropdown-link">GitHub</a>
+      <a href="music.html" class="dropdown-link">Music</a>
+      <a href="contact.html" class="dropdown-link">Contact</a>
     </div>
   </div>
-  <footer>
+
+  <!-- Header -->
+  <header class="site-header">
+    <h1>3D Models</h1>
+  </header>
+
+  <!-- Content Grid Fill this out with your 3D models these are place holders -->
+  <div class="grid">
+    <div class="card">
+      <img src="img/NefariousGuy.jpeg" alt="3D Model 1">
+      <p>NefariousGuy</p>
+    </div>
+    <div class="card">
+      <img src="img/Big_eyez.jpeg" alt="3D Model 2">
+      <p>BigEyez</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
     Created by Noah Jones
   </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
