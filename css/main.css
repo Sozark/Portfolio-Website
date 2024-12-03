@@ -2,7 +2,6 @@
 body {
   margin: 0;
   background: black;
-  background-color: black ;
   overflow: hidden;
   color: #0f0;
   font-family: 'Courier New', monospace;
@@ -14,8 +13,7 @@ canvas {
   left: 0;
   width: 100%; /* Ensure it covers the full viewport */
   height: 100%; /* Ensure it covers the full viewport */
-  z-index: -1;
-    /* Push it behind other content */
+  z-index: -1; /* Push it behind other content */
 }
 
 /* Header */
@@ -33,7 +31,8 @@ canvas {
   align-items: center;
   padding: 10px 20px;
   border-bottom: 2px solid #0f0;
-  position: relative; 
+  position: relative;
+  background: black;
 }
 
 .hamburger-menu {
@@ -51,8 +50,9 @@ canvas {
   transform: scale(1.2);
 }
 
+/* Dropdown Links */
 .dropdown-links {
-  display: none;
+  display: none; /* Initially hidden */
   flex-direction: column;
   position: absolute;
   top: 50px;
@@ -78,8 +78,9 @@ canvas {
   transform: scale(1.1);
 }
 
+/* Show Dropdown Links */
 .dropdown-links.active {
-  display: flex; 
+  display: flex;
 }
 
 /* Grid */
@@ -90,38 +91,7 @@ canvas {
   padding: 40px;
   max-width: 1200px;
   margin: auto;
-  background-color: rgb(0, 0, 0);
-}
-
-.grid video{
-  width: 100%;
-  height: auto;
-  border-bottom: 2px solid #0f0;
-}
-
-/* About Page Grid */
-.Aboutgrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  padding: 40px;
-  max-width: 900px;
-  margin: auto;
-}
-
-.Aboutgrid .card {
-  border: 2px solid #0f0;
-  padding: 20px;
-  text-align: left;
-  color: #00ff00;
-  font-family: 'Courier New', monospace;
   background: black;
-  box-shadow: 0 0 10px #0f0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.Aboutgrid .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #0f0;
 }
 
 .card {
@@ -135,20 +105,7 @@ canvas {
   text-decoration: none;
   color: #00ff00;
   transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card img {
-  max-width: 100%; /* Ensure the image fits within its container */
-  max-height: 200px; /* Limit the height to make it navigable */
-  object-fit: cover; /* Ensure the image does not distort */
-  border-bottom: 2px solid #0f0;
-  margin-bottom: 10px;
-}
-
-.card video {
-  width: 100%;
-  height: auto;
-  border-bottom: 2px solid #0f0;
+  background-color: black;
 }
 
 .card:hover {
@@ -156,9 +113,12 @@ canvas {
   box-shadow: 0 0 20px #0f0;
 }
 
-.card p{
-  color: #0f0;
-  font-size: 1.2em;
+.card i {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.card p {
   margin-top: 5px;
 }
 
