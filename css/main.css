@@ -32,6 +32,8 @@ canvas {
   padding: 10px 20px;
   border-bottom: 2px solid #0f0;
   background: black;
+  position: relative;
+  z-index: 10; 
 }
 
 .hamburger-menu {
@@ -54,13 +56,14 @@ canvas {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 50px;
+  top: 100%;
   left: 0;
   width: 100%;
   background: black;
   border-top: 1px solid #0f0;
   box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
   animation: dropdown 0.3s ease-in-out;
+  z-index: 10; 
 }
 
 .dropdown-link {
@@ -146,10 +149,29 @@ canvas {
   border-bottom: 2px solid #0f0;
 }
 
+.card audio {
+  width: 100%; /* Ensures the playback bar fits within the card */
+  border-bottom: 2px solid #0f0; /* Adds a bottom border for separation */
+  margin-bottom: 10px; /* Space between player and text */
+  box-sizing: border-box; 
+  background: black;
+  color: #0f0;
+  border: 2px solid #0f0;
+  border-radius: 5px;
+}
+
+.card audio:hover {
+  box-shadow: 0 0 20px #0f0; /* Enhance glow on hover */
+  transform: scale(1.02); /* Slight zoom effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+
 .card p {
   margin-top: 5px;
   color: #0f0;
   font-size: 1.1em;
+  font-family: 'Courier New', monospace;
+  text-shadow: 0 0 5px #0f0; 
 }
 
 /* Footer */
