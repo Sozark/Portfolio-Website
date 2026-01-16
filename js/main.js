@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hamburger Menu Functionality
     const menuToggle = document.querySelector('.menu-toggle');
     const dropdownLinks = document.querySelector('.dropdown-links');
-
     menuToggle.addEventListener('click', () => {
         dropdownLinks.classList.toggle('active'); // Toggle dropdown menu
     });
@@ -13,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     context.globalCompositeOperation = 'lighter';
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-
     const textStrip = ['诶', '比', '西', '迪', '伊', '吉', '艾', '杰', '开', '哦', '屁', '提', '维'];
     const stripCount = 60;
     const stripX = [];
@@ -23,10 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const theColors = ['#cefbe4', '#81ec72', '#5cd646', '#54d13c', '#4ccc32', '#43c728'];
 
     for (let i = 0; i < stripCount; i++) {
-        stripX[i] = Math.floor(Math.random() * canvas.width); // Random starting x positions
-        stripY[i] = Math.floor(Math.random() * canvas.height); // Random starting y positions
-        dY[i] = Math.random() * 3 + 1; // Random speed
-        stripFontSize[i] = Math.floor(Math.random() * 16) + 8; // Random font sizes
+        stripX[i] = Math.floor(Math.random() * canvas.width);
+        stripY[i] = Math.floor(Math.random() * canvas.height);
+        dY[i] = Math.random() * 3 + 1;
+        stripFontSize[i] = Math.floor(Math.random() * 16) + 8;
     }
 
     function drawStrip(x, y) {
@@ -39,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function draw() {
-        context.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas each frame
+        context.clearRect(0, 0, canvas.width, canvas.height);
         context.shadowOffsetX = context.shadowOffsetY = 0;
         context.shadowBlur = 8;
         context.shadowColor = '#94f475';
@@ -48,44 +46,38 @@ document.addEventListener('DOMContentLoaded', () => {
             context.font = `${stripFontSize[j]}px monospace`;
             context.textBaseline = 'top';
             context.textAlign = 'center';
+            drawStrip(stripX[j], stripY[j]);
+            stripY[j] += dY[j];
 
-            drawStrip(stripX[j], stripY[j]); // Draw the current strip
-            stripY[j] += dY[j]; // Move the strip down
-
-            // Reset the strip when it exits the canvas
             if (stripY[j] > canvas.height) {
-                stripY[j] = -stripFontSize[j] * 20; // Restart above the canvas
-                stripX[j] = Math.floor(Math.random() * canvas.width); // Randomize x position
-                dY[j] = Math.random() * 3 + 1; // Randomize speed
-                stripFontSize[j] = Math.floor(Math.random() * 16) + 8; // Randomize font size
+                stripY[j] = -stripFontSize[j] * 20;
+                stripX[j] = Math.floor(Math.random() * canvas.width);
+                dY[j] = Math.random() * 3 + 1;
+                stripFontSize[j] = Math.floor(Math.random() * 16) + 8;
             }
         }
-
-        requestAnimationFrame(draw); // Continue the animation
+        requestAnimationFrame(draw);
     }
 
     draw();
 
-    // Update canvas size on window resize
     window.addEventListener('resize', () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
+    // Contact Form - ONLY runs if the form exists on the page
     const contactForm = document.getElementById('contactForm');
-  
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-  
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-  
-      // Simulate sending the message (you can replace this with an actual backend call)
-      alert(`Thank you, ${name}! Your message has been sent.`);
-      contactForm.reset();
-    });
-  });
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            alert(`Thank you, ${name}! Your message has been sent.`);
+            contactForm.reset();
+        });
+    }
+});
   
