@@ -1,25 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Hamburger Menu Functionality
+
+    /************* Hamburger Menu *************/
     const menuToggle = document.querySelector('.menu-toggle');
     const dropdownLinks = document.querySelector('.dropdown-links');
-    menuToggle.addEventListener('click', () => {
-        dropdownLinks.classList.toggle('active'); // Toggle dropdown menu
-    });
 
-    // Matrix Animation
+    if (menuToggle && dropdownLinks) {
+        menuToggle.addEventListener('click', () => {
+            dropdownLinks.classList.toggle('active'); // Toggle menu
+        });
+    }
+
+    /************* Matrix Canvas Animation *************/
     const canvas = document.body.appendChild(document.createElement('canvas'));
-    const context = canvas.getContext('2d');
-    context.globalCompositeOperation = 'lighter';
+    const ctx = canvas.getContext('2d');
+    ctx.globalCompositeOperation = 'lighter';
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    const textStrip = ['诶', '比', '西', '迪', '伊', '吉', '艾', '杰', '开', '哦', '屁', '提', '维'];
+
+    const textStrip = ['诶','比','西','迪','伊','吉','艾','杰','开','哦','屁','提','维','N','O','A','H','J','O','N','E','S'];
     const stripCount = 60;
     const stripX = [];
     const stripY = [];
     const dY = [];
     const stripFontSize = [];
-    const theColors = ['#cefbe4', '#81ec72', '#5cd646', '#54d13c', '#4ccc32', '#43c728'];
+    const theColors = ['#cefbe4','#81ec72','#5cd646','#54d13c','#4ccc32','#43c728'];
 
+    // Initialize strip positions, speed, font size
     for (let i = 0; i < stripCount; i++) {
         stripX[i] = Math.floor(Math.random() * canvas.width);
         stripY[i] = Math.floor(Math.random() * canvas.height);
@@ -30,22 +37,23 @@ document.addEventListener('DOMContentLoaded', () => {
     function drawStrip(x, y) {
         for (let k = 0; k <= 20; k++) {
             const randChar = textStrip[Math.floor(Math.random() * textStrip.length)];
-            context.fillStyle = theColors[k % theColors.length];
-            context.fillText(randChar, x, y);
+            ctx.fillStyle = theColors[k % theColors.length];
+            ctx.fillText(randChar, x, y);
             y -= stripFontSize[k];
         }
     }
 
-    function draw() {
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        context.shadowOffsetX = context.shadowOffsetY = 0;
-        context.shadowBlur = 8;
-        context.shadowColor = '#94f475';
+    function drawMatrix() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.shadowOffsetX = ctx.shadowOffsetY = 0;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = '#94f475';
 
         for (let j = 0; j < stripCount; j++) {
-            context.font = `${stripFontSize[j]}px monospace`;
-            context.textBaseline = 'top';
-            context.textAlign = 'center';
+            ctx.font = `${stripFontSize[j]}px monospace`;
+            ctx.textBaseline = 'top';
+            ctx.textAlign = 'center';
+
             drawStrip(stripX[j], stripY[j]);
             stripY[j] += dY[j];
 
@@ -56,28 +64,51 @@ document.addEventListener('DOMContentLoaded', () => {
                 stripFontSize[j] = Math.floor(Math.random() * 16) + 8;
             }
         }
-        requestAnimationFrame(draw);
+
+        requestAnimationFrame(drawMatrix);
     }
 
-    draw();
+    drawMatrix();
 
+    // Resize canvas dynamically
     window.addEventListener('resize', () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     });
 
-    // Contact Form - ONLY runs if the form exists on the page
+    /************* Contact Form Logic *************/
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
             alert(`Thank you, ${name}! Your message has been sent.`);
             contactForm.reset();
         });
     }
+
+    /************* Red / Blue Pill Navigation *************/
+    const redPill = document.getElementById('redPill');
+    const bluePill = document.getElementById('bluePill');
+
+    if (redPill && bluePill) {
+        // Red pill -> Portfolio
+        redPill.addEventListener('click', () => {
+            document.body.style.transition = 'opacity 0.5s';
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                window.location.href = 'portfolio.html';
+            }, 500);
+        });
+
+        // Blue pill -> Wrong choice
+        bluePill.addEventListener('click', () => {
+            document.body.style.transition = 'opacity 0.5s';
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                window.location.href = 'wrong-choice.html';
+            }, 500);
+        });
+    }
+
 });
-  
