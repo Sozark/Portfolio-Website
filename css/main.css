@@ -6,12 +6,11 @@ body {
 }
 
 canvas {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .site-header {
@@ -34,6 +33,10 @@ canvas {
 
 .hamburger-menu {
   cursor: pointer;
+}
+
+.dropdown-links.active {
+  display: flex; 
 }
 
 .menu-toggle {
@@ -314,4 +317,14 @@ form button:hover {
   margin-top: 25px;
   font-size: 1em;
   text-shadow: 0 0 5px #0f0;
+}
+
+.blinking::after {
+  content: '|';
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
 }

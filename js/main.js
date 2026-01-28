@@ -1,106 +1,119 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const page = document.body.dataset.page;
 
-  /************* MATRIX CANVAS *************/
+  /* ===== TYPEWRITER EFFECT ===== */
+  const typeEl = document.getElementById('typewriter');
+  if (typeEl) {
+    const text = typeEl.textContent.trim();
+    typeEl.textContent = '';
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        typeEl.textContent += text.charAt(i++);
+        typeEl.classList.add('blinking'); // blinking cursor
+        setTimeout(type, 80);
+      }
+    }
+    type();
+  }
 
-  // Seperates the falling code for before and after you enter the matrix. 
-  const page = document.body.dataset.page || 'portfolio';
-  // Create a canvas and add it to the page
-  const canvas = document.body.appendChild(document.createElement('canvas'));
+  /* ===== HAMBURGER MENU ===== */
+  const menuToggle = document.querySelector('.menu-toggle');
+  const dropdown = document.querySelector('.dropdown-links');
+  if (menuToggle && dropdown) {
+    menuToggle.addEventListener('click', () => {
+      dropdown.classList.toggle('active');
+    });
+  }
 
-  // Get the 2D drawing context (our paintbrush)
+  /* ===== CANVAS EFFECTS ===== */
+  if (page === 'choice') startSnowfall();
+  if (page === 'portfolio' || page === 'music') startMatrixRain();
+
+  /* ===== CHOICE PAGE PILLS ===== */
+  if (page === 'choice') {
+    const redPill = document.getElementById('redPill');
+    const bluePill = document.getElementById('bluePill');
+    if (redPill) redPill.addEventListener('click', () => window.location.href='portfolio.html');
+    if (bluePill) bluePill.addEventListener('click', () => window.location.href='wrong-choice.html');
+  }
+});
+
+/* ===== MATRIX RAIN ===== */
+function startMatrixRain() {
+  const canvas = document.createElement('canvas');
+  document.body.appendChild(canvas);
   const ctx = canvas.getContext('2d');
-
-  // Makes overlapping colors glow brighter
-  ctx.globalCompositeOperation = 'lighter';
-
-  // Set canvas to full screen
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  // Characters used in the Matrix rain
   const chars = ['诶','比','西','迪','伊','吉','艾','杰','开','哦','屁','提','维','N','O','A','H','J','O','N','E','S'];
-
-  // Number of rain columns
   const drops = 50;
-
-  // Arrays to store properties for each column
-  const x = [];
-  const y = [];
-  const speed = [];
-  const size = [];
-
-  // Matrix green color palette
+  const x = [], y = [], speed = [], size = [];
   const colors = ['#cefbe4','#81ec72','#5cd646','#54d13c'];
 
-  // Initialize each rain column
   for (let i = 0; i < drops; i++) {
-    x[i] = Math.random() * canvas.width;   // Random horizontal position
-    y[i] = Math.random() * canvas.height;  // Random vertical position
-    speed[i] = Math.random() * 1 + 1;      // Fall speed
-    size[i] = Math.random() * 16 + 8;      // Font size
+    x[i] = Math.random() * canvas.width;
+    y[i] = Math.random() * canvas.height;
+    speed[i] = Math.random() * 1 + 1;
+    size[i] = Math.random() * 16 + 8;
   }
 
-  // Animation loop
-  function drawMatrix() {
-
-    // Clear the previous frame
+  function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Glow effect
     ctx.shadowBlur = 8;
     ctx.shadowColor = '#94f475';
-
-    // Draw each falling character
     for (let i = 0; i < drops; i++) {
       ctx.font = `${size[i]}px monospace`;
       ctx.fillStyle = colors[i % colors.length];
-
-      // Draw a random character
-      ctx.fillText(
-        chars[Math.floor(Math.random() * chars.length)],
-        x[i],
-        y[i]
-      );
-
-      // Move character downward
+      ctx.fillText(chars[Math.floor(Math.random() * chars.length)], x[i], y[i]);
       y[i] += speed[i];
-
-      // Reset to top when it goes off-screen
       if (y[i] > canvas.height) y[i] = 0;
     }
-
-    // Keep animation running
-    requestAnimationFrame(drawMatrix);
+    requestAnimationFrame(draw);
   }
+  draw();
 
-  // Start the animation
-  drawMatrix();
-
-  // Resize canvas when window changes size
   window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   });
-});
+}
 
-  /************* PILL CHOICE LOGIC *************/
-  const redPill = document.getElementById('redPill');
-  const bluePill = document.getElementById('bluePill');
+/* ===== SNOWFALL ===== */
+function startSnowfall() {
+  const canvas = document.createElement('canvas');
+  document.body.appendChild(canvas);
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 
-  if (redPill) {
-    redPill.addEventListener('click', () => {
-      document.body.style.opacity = '0';
-      setTimeout(() => {
-        window.location.href = 'portfolio.html';
-      }, 500);
-    });
+  const chars = ['❄','*','•','·'];
+  const drops = 100;
+  const x = [], y = [], speed = [], size = [];
+
+  for (let i = 0; i < drops; i++) {
+    x[i] = Math.random() * canvas.width;
+    y[i] = Math.random() * canvas.height;
+    speed[i] = Math.random() * 1 + 0.5;
+    size[i] = Math.random() * 20 + 10;
   }
 
-  if (bluePill) {
-    bluePill.addEventListener('click', () => {
-      document.body.style.opacity = '0';
-      setTimeout(() => {
-        window.location.href = 'wrong-choice.html';
-      }, 500);
-    });
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < drops; i++) {
+      ctx.font = `${size[i]}px monospace`;
+      ctx.fillStyle = '#cefbe4';
+      ctx.fillText(chars[Math.floor(Math.random() * chars.length)], x[i], y[i]);
+      y[i] += speed[i];
+      if (y[i] > canvas.height) y[i] = 0;
+    }
+    requestAnimationFrame(draw);
   }
+  draw();
+
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+}
