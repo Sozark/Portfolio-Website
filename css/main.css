@@ -328,3 +328,120 @@ form button:hover {
   0%, 50%, 100% { opacity: 1; }
   25%, 75% { opacity: 0; }
 }
+
+/* ==========================================================================
+   CHOICE PAGE  —  add these rules to the bottom of your existing main.css
+   ========================================================================== */
+
+/* ---- Layout ---- */
+body[data-page="choice"] {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* ---- Coloured spans inside choice subtext ---- */
+.red-text  { color: red;  text-shadow: 0 0 8px red; }
+.blue-text { color: #44f; text-shadow: 0 0 8px #44f; }
+
+/* ---- Headline fades in immediately ---- */
+.choice-headline {
+  opacity: 0;
+  font-size: 1.8em;
+  color: #0f0;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #0f0;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 2px;
+  animation: fadeInUp 1s ease-out 0s forwards;
+}
+
+/* ---- Morpheus fades in slowly ---- */
+.morpheus-img {
+  opacity: 0;
+  max-width: 320px;
+  height: auto;
+  animation: morpheusFadeIn 3s ease-in 0.8s forwards;
+}
+
+@keyframes morpheusFadeIn {
+  0%   { opacity: 0;   filter: drop-shadow(0 0 0px  #0f0) brightness(0.2); }
+  40%  { opacity: 0.3; filter: drop-shadow(0 0 10px #0f0) brightness(0.5); }
+  100% { opacity: 1;   filter: drop-shadow(0 0 25px #0f0) brightness(1);   }
+}
+
+/* ---- Pills appear after Morpheus ---- */
+.pill {
+  opacity: 0;
+  animation: pillAppear 0.6s ease-out 3.5s forwards;
+}
+
+@keyframes pillAppear {
+  from { opacity: 0; transform: scale(0.5); }
+  to   { opacity: 1; transform: scale(1);   }
+}
+
+/* ---- Red pill ---- */
+.red-pill {
+  background: radial-gradient(ellipse at center, #550000 0%, black 100%);
+  border-color: red;
+  animation: pillAppear 0.6s ease-out 3.5s forwards,
+             redPulse    2s ease-in-out  4.2s infinite;
+}
+
+@keyframes redPulse {
+  0%, 100% { box-shadow: 0 0 5px red; }
+  50%       { box-shadow: 0 0 18px red, 0 0 35px rgba(255, 0, 0, 0.3); }
+}
+
+/* ---- Blue pill ---- */
+.blue-pill {
+  background: radial-gradient(ellipse at center, #000033 0%, black 100%);
+  border-color: #00f;
+  animation: pillAppear 0.6s ease-out 3.8s forwards,
+             bluePulse   2s ease-in-out  4.5s infinite;
+}
+
+@keyframes bluePulse {
+  0%, 100% { box-shadow: 0 0 5px #00f; }
+  50%       { box-shadow: 0 0 18px #00f, 0 0 35px rgba(0, 0, 255, 0.3); }
+}
+
+/* ---- Subtext fades in last ---- */
+.choice-subtext {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 4.2s forwards;
+}
+
+/* ---- Shared fade-up keyframe ---- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ---- Cinematic vignette ---- */
+.vignette {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, black 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ---- White flash overlay (fires on pill click) ---- */
+.flash-overlay {
+  position: fixed;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+  transition: opacity 0.05s ease;
+}
+
+.flash-overlay.active {
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}

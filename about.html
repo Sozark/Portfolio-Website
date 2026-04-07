@@ -1,62 +1,140 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <title>About</title>
-  <meta name="description" content="This site will serve as the hub for many sub responsive layouts">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-
-  <link rel="icon" href="img/favicon_io/favicon.ico" type="/img/favicon_io">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-
+  <title>Noah C. Jones — About</title>
+  <meta name="description" content="About Noah C. Jones — designer, engineer, creator.">
+  <meta name="viewport"    content="width=device-width, initial-scale=1">
+  <link rel="icon" href="img/favicon_io/favicon.ico">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-
+  <link rel="stylesheet" href="css/portfolio.css">
+  <link rel="stylesheet" href="css/about-contact.css">
   <script src="https://kit.fontawesome.com/d0041be44b.js" crossorigin="anonymous"></script>
-
-  <meta name="theme-color" content="#fafafa">
 </head>
 
 <body data-page="portfolio">
-  <script src="js/main.js"></script>
-  <div class="mobile-nav-wrapper">
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()"></a>
-  
-  <header class = "site-header">
-  <h1 id="typewriter"> About</h1>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="portfolio.html" class="nav-logo"><span>NCJ</span> // HOME</a>
+    
+    <!-- Navigation Links-->
+    <ul class="nav-links">
+      <li><a href="art.html">Art</a></li>
+      <li><a href="3DModels.html">3D Models</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="github.html">GitHub</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="hamburger-menu">
+      <i class="fa fa-bars menu-toggle"></i>
+    </div>
+
+    <div class="dropdown-links">
+      <a href="portfolio.html" class="dropdown-link">Home</a>
+      <a href="art.html"       class="dropdown-link">Art</a>
+      <a href="3DModels.html"  class="dropdown-link">3D Models</a>
+      <a href="videos.html"    class="dropdown-link">Videos</a>
+      <a href="music.html"     class="dropdown-link">Music</a>
+      <a href="github.html"    class="dropdown-link">GitHub</a>
+      <a href="contact.html"   class="dropdown-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Page header -->
+  <header class="page-header">
+    <p class="page-header__eyebrow">// SECTION 00</p>
+    <h1 class="page-header__title">About</h1>
+    <div class="page-header__line"></div>
   </header>
 
-  <div class="container">
-    <div class="navbar">
-      <div class="hamburger-menu">
-        <i class="fa fa-bars menu-toggle"></i>
+  <!-- About layout -->
+  <main class="about-layout">
+
+    <!-- Identity block -->
+    <div class="about-identity">
+
+      <div class="about-avatar">
+        <i class="fa-solid fa-user"></i>
       </div>
-      <div class="dropdown-links">
-        <a href="portfolio.html" class="dropdown-link">Home</a>
-        <a href="3DModels.html" class="dropdown-link">3D Models</a>
-        <a href="art.html" class="dropdown-link">Art</a>
-        <a href="videos.html" class="dropdown-link">Videos</a>
-        <a href="github.html" class="dropdown-link">GitHub</a>
-        <a href="music.html" class="dropdown-link">Music</a>
-        <a href="contact.html" class="dropdown-link">Contact</a>
+
+      <div class="about-id-text">
+        <p class="about-id-label">// IDENTITY</p>
+        <p class="about-id-name">Noah C. Jones</p>
+        <p class="about-id-role">Designer · Engineer · Creator</p>
       </div>
-    </div>  
-  <div class = "Aboutgrid">
-    <div class = "card">
-      <i class="fa-solid fa-palette"></i> 
-       <p>I am passionate about crafting exceptional user experiences through the fusion of design and technology. <br> With a background in both graphic design and software engineering, I bring a unique blend of creativity and technical expertise to every project. <br> My mission is to translate complex ideas into intuitive and visually captivating solutions that leave a lasting impact. <br> From concept to execution, I specialize in creating captivating visual narratives that resonate with audiences. <br> Proficient in Adobe Creative Suite, Akai MPC, Logic Pro X, Blender and Max 8 I design stunning graphics, illustrations, and layouts that convey messages with clarity and style. <br> My design philosophy revolves around balancing aesthetics and functionality to deliver designs that not only look great but also enhance user interactions.</p>
     </div>
-  </div>
-  <footer>
-    Created by Noah Jones
+
+    <!-- Bio card -->
+    <section class="about-card">
+      <p class="about-card__eyebrow">// BIO.txt</p>
+      <p class="about-card__body">
+        I am passionate about crafting exceptional user experiences through the
+        fusion of design and technology. With a background in both graphic design
+        and software engineering, I bring a unique blend of creativity and technical
+        expertise to every project.
+      </p>
+
+      <p class="about-card__body">
+        My mission is to translate complex ideas into intuitive and visually
+        captivating solutions that leave a lasting impact. From concept to execution,
+        I specialize in creating captivating visual narratives that resonate with audiences.
+      </p>
+
+      <p class="about-card__body">
+        My design philosophy revolves around balancing aesthetics and functionality
+        to deliver designs that not only look great but also enhance user interactions.
+      </p>
+    </section>
+
+    <!-- Skills grid -->
+    <section class="about-skills">
+      <p class="about-skills__label">// TECH_STACK</p>
+      <div class="skills-grid">
+
+        <div class="skill-chip">
+          <i class="fa-solid fa-brush"></i>
+          <span>Adobe Creative Suite</span>
+        </div>
+
+        <div class="skill-chip">
+          <i class="fa-solid fa-music"></i>
+          <span>Akai MPC</span>
+        </div>
+
+        <div class="skill-chip">
+          <i class="fa-solid fa-headphones"></i>
+          <span>Logic Pro X</span>
+        </div>
+
+        <div class="skill-chip">
+          <i class="fa-solid fa-cube"></i>
+          <span>Blender</span>
+        </div>
+
+        <div class="skill-chip">
+          <i class="fa-solid fa-wave-square"></i>
+          <span>Max 8</span>
+        </div>
+
+        <div class="skill-chip">
+          <i class="fa-solid fa-code"></i>
+          <span>Software Engineering</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <span>Created by Noah C. Jones</span>
   </footer>
+
+  <script src="js/main.js"></script>
+
 </body>
 </html>

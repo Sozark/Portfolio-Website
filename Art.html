@@ -1,82 +1,234 @@
 <!doctype html>
-<html class="no-js" lang="en">
-
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Art</title>
-  <meta name="description" content="This site will serve as the hub for many sub responsive layouts">
+  <title>Noah Jones — Art</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-
-  <link rel="icon" href="img/favicon_io/favicon.ico" type="/img/favicon_io">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-
+  <link rel="stylesheet" href="css/portfolio.css">
+  <link rel="icon" href="img/favicon_io/favicon.ico">
   <script src="https://kit.fontawesome.com/d0041be44b.js" crossorigin="anonymous"></script>
-
-  <meta name="theme-color" content="#fafafa">
 </head>
-
 <body data-page="portfolio">
-  <div class="navbar">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="portfolio.html" class="nav-logo"><span>NCJ</span> // HOME</a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="art.html" class="active">Art</a></li>
+      <li><a href="3DModels.html">3D Models</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="github.html">GitHub</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
     <div class="hamburger-menu">
       <i class="fa fa-bars menu-toggle"></i>
     </div>
     <div class="dropdown-links">
       <a href="portfolio.html" class="dropdown-link">Home</a>
-      <a href="art.html" class="dropdown-link">Art</a>
-      <a href="3DModels.html" class="dropdown-link">3D Models</a>
-      <a href="videos.html" class="dropdown-link">Videos</a>
-      <a href="github.html" class="dropdown-link">GitHub</a>
-      <a href="music.html" class="dropdown-link">Music</a>
-      <a href="contact.html" class="dropdown-link">Contact</a>
+      <a href="art.html"       class="dropdown-link">Art</a>
+      <a href="3DModels.html"  class="dropdown-link">3D Models</a>
+      <a href="videos.html"    class="dropdown-link">Videos</a>
+      <a href="music.html"     class="dropdown-link">Music</a>
+      <a href="github.html"    class="dropdown-link">GitHub</a>
+      <a href="contact.html"   class="dropdown-link">Contact</a>
     </div>
-  </div>
-  
-  <header class="site-header">
-    <h1 id="typewriter"> Art Gallery</h1>
+  </nav>
+
+  <!-- Page header -->
+  <header class="page-header">
+    <p class="page-header__eyebrow">// SECTION 01</p>
+    <h1 class="page-header__title">Art Gallery</h1>
+    <div class="page-header__line"></div>
   </header>
 
-  <div class="grid">
-  <div class="card">
-    <img src="img/Rhintone.jpeg" alt="Rhintone">
-    <p>Rhintone</p>
+  <!-- ── Carousel ── -->
+  <section class="carousel-section">
+    <p class="carousel-label">Featured — <span id="slideCounter">01 / 06</span></p>
+    <div class="carousel-outer">
+      <div class="carousel-track">
+
+        <div class="carousel-slide" data-modal
+             data-type="image"
+             data-src="img/Rhintone.jpeg"
+             data-title="Rhintone"
+             data-desc="// Replace this text with your description of Rhintone">
+          <img src="img/Rhintone.jpeg" alt="Rhintone">
+          <div class="carousel-slide__meta">
+            <p class="carousel-slide__index">01 / 06</p>
+            <h2 class="carousel-slide__title">Rhintone</h2>
+          </div>
+        </div>
+
+        <div class="carousel-slide" data-modal
+             data-type="image"
+             data-src="img/Sacred Geometry.jpeg"
+             data-title="Sacred Geometry"
+             data-desc="// Replace this text with your description of Sacred Geometry">
+          <img src="img/Sacred Geometry.jpeg" alt="Sacred Geometry">
+          <div class="carousel-slide__meta">
+            <p class="carousel-slide__index">02 / 06</p>
+            <h2 class="carousel-slide__title">Sacred Geometry</h2>
+          </div>
+        </div>
+
+        <div class="carousel-slide" data-modal
+             data-type="image"
+             data-src="img/Shifted Worlds.jpeg"
+             data-title="Shifted Worlds"
+             data-desc="// Replace this text with your description of Shifted Worlds">
+          <img src="img/Shifted Worlds.jpeg" alt="Shifted Worlds">
+          <div class="carousel-slide__meta">
+            <p class="carousel-slide__index">03 / 06</p>
+            <h2 class="carousel-slide__title">Shifted Worlds</h2>
+          </div>
+        </div>
+
+        <div class="carousel-slide" data-modal
+             data-type="image"
+             data-src="img/Grizmada.jpeg"
+             data-title="Grizmada"
+             data-desc="// Replace this text with your description of Grizmada">
+          <img src="img/Grizmada.jpeg" alt="Grizmada">
+          <div class="carousel-slide__meta">
+            <p class="carousel-slide__index">04 / 06</p>
+            <h2 class="carousel-slide__title">Grizmada</h2>
+          </div>
+        </div>
+
+        <div class="carousel-slide" data-modal
+             data-type="image"
+             data-src="img/Hexez.jpeg"
+             data-title="Hexez"
+             data-desc="// Replace this text with your description of Hexez">
+          <img src="img/Hexez.jpeg" alt="Hexez">
+          <div class="carousel-slide__meta">
+            <p class="carousel-slide__index">05 / 06</p>
+            <h2 class="carousel-slide__title">Hexez</h2>
+          </div>
+        </div>
+
+        <div class="carousel-slide" data-modal
+             data-type="image"
+             data-src="img/Huti.png"
+             data-title="Huti"
+             data-desc="// Replace this text with your description of Huti">
+          <img src="img/Huti.png" alt="Huti">
+          <div class="carousel-slide__meta">
+            <p class="carousel-slide__index">06 / 06</p>
+            <h2 class="carousel-slide__title">Huti</h2>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel-btn carousel-btn--prev" aria-label="Previous">&#8592;</button>
+      <button class="carousel-btn carousel-btn--next" aria-label="Next">&#8594;</button>
+    </div>
+    <div class="carousel-dots"></div>
+  </section>
+
+  <!-- ── Grid ── -->
+  <section class="grid-section">
+    <p class="grid-section__label">All Works</p>
+    <div class="grid">
+
+      <div class="card" data-modal
+           data-type="image"
+           data-src="img/Rhintone.jpeg"
+           data-title="Rhintone"
+           data-desc="// Replace this text with your description of Rhintone">
+        <img src="img/Rhintone.jpeg" alt="Rhintone">
+        <div class="card__meta">
+          <p class="card__title">Rhintone</p>
+          <p class="card__hint">Click to expand →</p>
+        </div>
+      </div>
+
+      <div class="card" data-modal
+           data-type="image"
+           data-src="img/Sacred Geometry.jpeg"
+           data-title="Sacred Geometry"
+           data-desc="// Replace this text with your description of Sacred Geometry">
+        <img src="img/Sacred Geometry.jpeg" alt="Sacred Geometry">
+        <div class="card__meta">
+          <p class="card__title">Sacred Geometry</p>
+          <p class="card__hint">Click to expand →</p>
+        </div>
+      </div>
+
+      <div class="card" data-modal
+           data-type="image"
+           data-src="img/Shifted Worlds.jpeg"
+           data-title="Shifted Worlds"
+           data-desc="// Replace this text with your description of Shifted Worlds">
+        <img src="img/Shifted Worlds.jpeg" alt="Shifted Worlds">
+        <div class="card__meta">
+          <p class="card__title">Shifted Worlds</p>
+          <p class="card__hint">Click to expand →</p>
+        </div>
+      </div>
+
+      <div class="card" data-modal
+           data-type="image"
+           data-src="img/Grizmada.jpeg"
+           data-title="Grizmada"
+           data-desc="// Replace this text with your description of Grizmada">
+        <img src="img/Grizmada.jpeg" alt="Grizmada">
+        <div class="card__meta">
+          <p class="card__title">Grizmada</p>
+          <p class="card__hint">Click to expand →</p>
+        </div>
+      </div>
+
+      <div class="card" data-modal
+           data-type="image"
+           data-src="img/Hexez.jpeg"
+           data-title="Hexez"
+           data-desc="// Replace this text with your description of Hexez">
+        <img src="img/Hexez.jpeg" alt="Hexez">
+        <div class="card__meta">
+          <p class="card__title">Hexez</p>
+          <p class="card__hint">Click to expand →</p>
+        </div>
+      </div>
+
+      <div class="card" data-modal
+           data-type="image"
+           data-src="img/Huti.png"
+           data-title="Huti"
+           data-desc="// Replace this text with your description of Huti">
+        <img src="img/Huti.png" alt="Huti">
+        <div class="card__meta">
+          <p class="card__title">Huti</p>
+          <p class="card__hint">Click to expand →</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal-overlay">
+    <div class="modal">
+      <button class="modal__close">[ ESC ] Close</button>
+      <div class="modal__audio-visual" style="display:none;"></div>
+      <div class="modal__media"></div>
+      <div class="modal__body">
+        <p class="modal__eyebrow">// ART</p>
+        <h2 class="modal__title"></h2>
+        <p class="modal__desc"></p>
+      </div>
+    </div>
   </div>
-  <div class="card">
-    <img src="img/Sacred Geometry.jpeg" alt="Sacred Geometry">
-    <p>Sacred Geometry</p>
-  </div>
-  <div class="card">
-    <img src="img/Shifted Worlds.jpeg" alt="Shifted Worlds">
-    <p>Shifted Worlds</p>
-  </div>
-  <div class="card">
-    <img src="img/Grizmada.jpeg" alt="Grizmada">
-    <p>Grizmada</p>
-  </div>
-  <div class="card">
-    <img src="img/Hexez.jpeg" alt="Hexez">
-    <p>Hexez</p>
-  </div>
-  <div class="card">
-    <img src="img/Huti.png" alt="Huti">
-    <p>Huti</p>
-  </div>
-</div>
 
   <footer class="site-footer">
-    Created by Noah Jones
+    <span>Created by Noah C. Jones</span>
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/portfolio.js"></script>
 </body>
-
 </html>

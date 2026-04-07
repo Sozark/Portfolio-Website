@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const redPill = document.getElementById('redPill');
     const bluePill = document.getElementById('bluePill');
     if (redPill) redPill.addEventListener('click', () => window.location.href='portfolio.html');
-    if (bluePill) bluePill.addEventListener('click', () => window.location.href='wrong-choice.html');
+    if (bluePill) bluePill.addEventListener('click', () => window.location.href='wrongChoice.html');
   }
 });
 
@@ -116,4 +116,29 @@ function startSnowfall() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   });
+}
+
+   /* CHOICE PAGE */
+
+/* ===== PILL NAVIGATION (choice page only) ===== */
+if (page === 'choice') {
+  const redPill  = document.getElementById('redPill');
+  const bluePill = document.getElementById('bluePill');
+  const flash    = document.getElementById('flashOverlay');
+
+  /* Pill logic */
+  function pillClick(destination) {
+    // Instant white flash, then navigate
+    flash.style.opacity    = '1';
+    flash.style.transition = 'opacity 0.05s ease';
+    setTimeout(() => {
+      flash.style.transition = 'opacity 0.5s ease';
+      setTimeout(() => {
+        window.location.href = destination;
+      }, 150);
+    }, 60);
+  }
+
+  if (redPill)  redPill.addEventListener('click',  () => pillClick('portfolio.html'));
+  if (bluePill) bluePill.addEventListener('click', () => pillClick('wrongChoice.html'));
 }

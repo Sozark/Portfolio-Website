@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TeraCorp Inc. — Employee Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/wrongChoice.css">
+</head>
+<body>
+
+  <!-- Fluorescent light flicker overlay -->
+  <div class="light-overlay"></div>
+
+  <!-- Fade-to-black on navigate away -->
+  <div class="flash-overlay" id="flashOverlay"></div>
+
+  <div class="scene-wrapper">
+
+    <!-- Windows-style taskbar -->
+    <div class="taskbar">
+      <div class="taskbar-logo">⊞ Start</div>
+      <div class="taskbar-item">📊 Q3_REPORT_FINAL_v3.xls</div>
+      <div class="taskbar-item">📧 Outlook (47 unread)</div>
+      <div class="taskbar-item">🗓️ Mandatory Sensitivity Training</div>
+      <div class="taskbar-clock" id="taskbarClock">9:07 AM</div>
+    </div>
+
+    <!-- Cubicle scene -->
+    <div class="cubicle-scene">
+
+      <div class="ceiling-light"></div>
+
+      <div class="cubicle">
+
+        <!-- Fabric pinboard wall -->
+        <div class="pinboard">
+          <div class="pin-note">Meeting<br>moved to<br>3pm AGAIN</div>
+          <div class="motivational">
+            <span class="big-word">SYNERGY</span>
+            Together we<br>achieve more™
+          </div>
+          <div class="pin-note">TPS Reports<br>DUE FRIDAY<br>⚠️ No exceptions</div>
+          <div class="pin-note">Password:<br>Summer2003!<br>(don't share)</div>
+          <div class="motivational motivational--rotated">
+            <span class="big-word">TEAMWORK</span>
+            There's no I<br>in CORPORATION
+          </div>
+        </div>
+
+        <!-- Desk -->
+        <div class="desk">
+
+          <!-- Monitor -->
+          <div class="monitor-wrap">
+            <div class="monitor">
+              <div class="monitor-screen">
+                <div class="title-bar">
+                  <span>Microsoft Excel — Q3_REPORT_FINAL_FINAL.xls</span>
+                  <span class="win-btns">
+                    <span>_</span><span>□</span><span>×</span>
+                  </span>
+                </div>
+                <div class="spreadsheet">
+                  <table>
+                    <tr>
+                      <td class="header">A</td>
+                      <td class="header">B</td>
+                      <td class="header">C</td>
+                      <td class="header">D</td>
+                    </tr>
+                    <tr><td>Q1 Total</td><td>$48,220</td><td>+2.1%</td><td>✓</td></tr>
+                    <tr><td>Q2 Total</td><td>$49,110</td><td>+1.8%</td><td>✓</td></tr>
+                    <tr><td>Q3 Total</td><td>$48,<span class="cursor"></span></td><td></td><td></td></tr>
+                  </table>
+                  <p class="calculating">Calculating... please wait</p>
+                </div>
+              </div>
+            </div>
+            <div class="monitor-stand"></div>
+            <div class="monitor-base"></div>
+          </div>
+
+          <!-- Keyboard -->
+          <div class="keyboard" id="keyboard"></div>
+
+          <!-- Small desk items -->
+          <div class="desk-items">
+            <div class="coffee-cup">☕</div>
+            <div class="paper-stack"><div class="paper-inner"></div></div>
+            <div class="stapler">🖇️</div>
+          </div>
+
+        </div><!-- /.desk -->
+      </div><!-- /.cubicle -->
+    </div><!-- /.cubicle-scene -->
+
+    <!-- Carpet floor -->
+    <div class="carpet"></div>
+
+  </div><!-- /.scene-wrapper -->
+
+  <!-- Pop-up window -->
+  <div class="popup-window" id="mainWindow">
+    <div class="win-title">
+      <span>⚠️ TeraCorp Employee Portal v2.1</span>
+      <span class="win-controls">
+        <span>_</span>
+        <span>□</span>
+        <span class="win-close" id="winClose">×</span>
+      </span>
+    </div>
+    <div class="win-body">
+      <span class="error-icon">🏢</span>
+      <h2>Welcome back, Employee #4471-B</h2>
+      <p>You have chosen <strong>The Blue Pill.</strong></p>
+      <p>Your reality has been <strong>successfully maintained.</strong><br>
+         Please enjoy your comfortable, predictable existence.</p>
+      <div class="employee-id">
+        NAME......: Valued Team Member<br>
+        DEPT......: Synergy Division<br>
+        STATUS....: Compliant<br>
+        VACATION..: 0.0 days remaining<br>
+        NEXT REVIEW: Q4 Performance Check
+      </div>
+      <p class="loading-text">Loading your assigned TPS reports...</p>
+      <div class="progress-wrap">
+        <div class="progress-bar" id="progressBar"></div>
+        <div class="progress-label" id="progressLabel">Initializing... 0%</div>
+      </div>
+      <div class="win-buttons">
+        <button class="win-btn" id="wakeUpBtn">← Wake Up</button>
+        <button class="win-btn win-btn--primary" id="redPillBtn">Take Red Pill</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/wrongChoice.js"></script>
+
+</body>
+</html>

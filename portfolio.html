@@ -1,64 +1,107 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title id= "typewriter">Portfolio</title>
+  <title>Noah C. Jones — Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/portfolio.css">
+  <link rel="icon" href="img/favicon_io/favicon.ico">
   <script src="https://kit.fontawesome.com/d0041be44b.js" crossorigin="anonymous"></script>
 </head>
 
 <body data-page="portfolio">
-  <header class="site-header">Welcome to Noah Jones' Portfolio</header>
 
-  <div class="navbar">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="portfolio.html" class="nav-logo"><span>NCJ</span> // HOME</a>
+
+    <!-- Dropdown Links-->
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="art.html">Art</a></li>
+      <li><a href="3DModels.html">3D Models</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="github.html">GitHub</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
     <div class="hamburger-menu">
-      <i class="fa fa-bars menu-toggle"></i> 
+      <i class="fa fa-bars menu-toggle"></i>
     </div>
+
+    <!-- Dropdown Links-->
     <div class="dropdown-links">
-      <a href="about.html" class="dropdown-link">About</a>
+      <a href="about.html"    class="dropdown-link">About</a>
+      <a href="art.html"      class="dropdown-link">Art</a>
       <a href="3DModels.html" class="dropdown-link">3D Models</a>
-      <a href="art.html" class="dropdown-link">Art</a>
-      <a href="videos.html" class="dropdown-link">Videos</a>
-      <a href="github.html" class="dropdown-link">GitHub</a>
-      <a href="music.html" class="dropdown-link">Music</a>
-      <a href="contact.html" class="dropdown-link">Contact</a>
-    </div>    
+      <a href="videos.html"   class="dropdown-link">Videos</a>
+      <a href="music.html"    class="dropdown-link">Music</a>
+      <a href="github.html"   class="dropdown-link">GitHub</a>
+      <a href="contact.html"  class="dropdown-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Page header -->
+  <header class="page-header">
+    <p class="page-header__eyebrow">// SIGNAL FOUND</p>
+    <h1 class="page-header__title">Noah C. Jones</h1>
+    <div class="page-header__line"></div>
+  </header>
+
+  <!-- Intro -->
+  <div class="hub-intro">
+    <p>
+      Designer, engineer, and creator working at the intersection of
+      <strong>code, art, and sound</strong>. Explore the archive below.
+    </p>
   </div>
 
-  <div class="grid">
-    <a href="about.html" class="card">
+  <!-- Hub grid -->
+  <main class="hub-grid">
+
+    <a href="about.html"    class="hub-card">
       <i class="fa-solid fa-user"></i>
       <p>About</p>
     </a>
-    <a href="art.html" class="card">
+
+    <a href="art.html"      class="hub-card">
       <i class="fa-solid fa-palette"></i>
       <p>Art</p>
     </a>
-    <a href="github.html" class="card">
-      <i class="fa-brands fa-github"></i>
-      <p>GitHub</p>
-    </a>
-    <a href="videos.html" class="card">
-      <i class="fa-solid fa-video"></i>
-      <p>Videos</p>
-    </a>
-    <a href="3DModels.html" class="card">
+
+    <a href="3DModels.html" class="hub-card">
       <i class="fa-solid fa-cube"></i>
       <p>3D Models</p>
     </a>
-    <a href="music.html" class="card">
+    
+    <a href="videos.html"   class="hub-card">
+      <i class="fa-solid fa-video"></i>
+      <p>Videos</p>
+    </a>
+
+    <a href="music.html"    class="hub-card">
       <i class="fa-solid fa-music"></i>
       <p>Music</p>
     </a>
-    <a href="contact.html" class="card">
+
+    <a href="github.html"   class="hub-card">
+      <i class="fa-brands fa-github"></i>
+      <p>GitHub</p>
+    </a>
+
+    <a href="contact.html"  class="hub-card">
       <i class="fa-solid fa-phone"></i>
       <p>Contact</p>
     </a>
-  </div>
 
-  <footer class="site-footer">Created by Noah Jones</footer>
+  </main>
+
+  <footer class="site-footer">
+    <span>Created by Noah C. Jones</span>
+  </footer>
 
   <script src="js/main.js"></script>
 </body>

@@ -1,81 +1,215 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
-  <title>Videos</title>
+  <title>Noah Jones — Videos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="icon" href="img/favicon_io/favicon.ico" type="/img/favicon_io">
+  <link rel="stylesheet" href="css/portfolio.css">
+  <link rel="icon" href="img/favicon_io/favicon.ico">
   <script src="https://kit.fontawesome.com/d0041be44b.js" crossorigin="anonymous"></script>
 </head>
-
 <body data-page="portfolio">
-  <!-- Hamburger Menu -->
-  <div class="navbar">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="portfolio.html" class="nav-logo"><span>NCJ</span> // HOME</a>
+
+    <!-- Dropdown Links-->
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="art.html">Art</a></li>
+      <li><a href="3DModels.html">3D Models</a></li>
+      <li><a href="videos.html" class="active">Videos</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="github.html">GitHub</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
     <div class="hamburger-menu">
       <i class="fa fa-bars menu-toggle"></i>
     </div>
+
+    <!-- Dropdown Links-->
     <div class="dropdown-links">
       <a href="portfolio.html" class="dropdown-link">Home</a>
-      <a href="art.html" class="dropdown-link">Art</a>
-      <a href="3DModels.html" class="dropdown-link">3D Models</a>
-      <a href="videos.html" class="dropdown-link">Videos</a>
-      <a href="github.html" class="dropdown-link">GitHub</a>
-      <a href="music.html" class="dropdown-link">Music</a>
-      <a href="contact.html" class="dropdown-link">Contact</a>
+      <a href="art.html"       class="dropdown-link">Art</a>
+      <a href="3DModels.html"  class="dropdown-link">3D Models</a>
+      <a href="videos.html"    class="dropdown-link">Videos</a>
+      <a href="music.html"     class="dropdown-link">Music</a>
+      <a href="github.html"    class="dropdown-link">GitHub</a>
+      <a href="contact.html"   class="dropdown-link">Contact</a>
     </div>
-  </div>
+  </nav>
 
-  <!-- Header -->
-  <header class="site-header">
-    <h1>Videos</h1>
+  <!-- Page header -->
+  <header class="page-header">
+    <p class="page-header__eyebrow">// SECTION 03</p>
+    <h1 class="page-header__title">Videos</h1>
+    <div class="page-header__line"></div>
   </header>
 
-  <!-- Video Grid -->
-  <div class="grid">
-    <div class="card">
-      <video controls preload = "anunaki"  controls width="100%">
-        <source src="videos/anunaki.mp4" type="video/mp4">
-      </video>
-      <p>Anunaki</p>
+  <!-- ── Carousel ── -->
+  <section class="carousel-section">
+    <p class="carousel-label">Featured — <span id="slideCounter">01 / 05</span></p>
+    <div class="carousel-outer">
+      <div class="carousel-track">
+
+        <div class="carousel-slide" data-modal
+             data-type="video"
+             data-src="videos/anunaki.mp4"
+             data-title="Anunaki"
+             data-desc="// Replace this text with your description of Anunaki">
+          <video src="videos/anunaki.mp4" muted preload="metadata"></video>
+          <div class="carousel-slide__meta">
+            <p class="carousel-slide__index">01 / 05</p>
+            <h2 class="carousel-slide__title">Anunaki</h2>
+          </div>
+        </div>
+
+        <div class="carousel-slide" data-modal
+             data-type="video"
+             data-src="videos/analogwaves.mp4"
+             data-title="Analog Waves"
+             data-desc="// Replace this text with your description of Analog Waves">
+          <video src="videos/analogwaves.mp4" muted preload="metadata"></video>
+          <div class="carousel-slide__meta">
+            <p class="carousel-slide__index">02 / 05</p>
+            <h2 class="carousel-slide__title">Analog Waves</h2>
+          </div>
+        </div>
+
+        <div class="carousel-slide" data-modal
+             data-type="video"
+             data-src="videos/digital-villian.mp4"
+             data-title="Digital Villain"
+             data-desc="// Replace this text with your description of Digital Villain">
+          <video src="videos/digital-villian.mp4" muted preload="metadata"></video>
+          <div class="carousel-slide__meta">
+            <p class="carousel-slide__index">03 / 05</p>
+            <h2 class="carousel-slide__title">Digital Villain</h2>
+          </div>
+        </div>
+
+        <div class="carousel-slide" data-modal
+             data-type="video"
+             data-src="videos/enterthevoid.mp4"
+             data-title="Enter the Void"
+             data-desc="// Replace this text with your description of Enter the Void">
+          <video src="videos/enterthevoid.mp4" muted preload="metadata"></video>
+          <div class="carousel-slide__meta">
+            <p class="carousel-slide__index">04 / 05</p>
+            <h2 class="carousel-slide__title">Enter The Void</h2>
+          </div>
+        </div>
+
+        <div class="carousel-slide" data-modal
+             data-type="video"
+             data-src="videos/tv-glitch.mp4"
+             data-title="TV Glitch"
+             data-desc="// Replace this text with your description of TV Glitch">
+          <video src="videos/tv-glitch.mp4" muted preload="metadata"></video>
+          <div class="carousel-slide__meta">
+            <p class="carousel-slide__index">05 / 05</p>
+            <h2 class="carousel-slide__title">TV Glitch</h2>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel-btn carousel-btn--prev" aria-label="Previous">&#8592;</button>
+      <button class="carousel-btn carousel-btn--next" aria-label="Next">&#8594;</button>
     </div>
-    <div class="card">
-      <video controls preload = "metadata" width="100%">
-        <source src="videos/analogwaves.mp4" type="video/mp4">
-      </video>
-      <p>Analog Waves</p>
+    <div class="carousel-dots"></div>
+  </section>
+
+  <!-- ── Grid ── -->
+  <section class="grid-section">
+    <p class="grid-section__label">All Videos</p>
+    <div class="grid">
+
+      <div class="card" data-modal
+           data-type="video"
+           data-src="videos/anunaki.mp4"
+           data-title="Anunaki"
+           data-desc="// Replace this text with your description of Anunaki">
+        <video src="videos/anunaki.mp4" muted preload="metadata"></video>
+        <div class="card__meta">
+          <p class="card__title">Anunaki</p>
+          <p class="card__hint">Click to play →</p>
+        </div>
+      </div>
+
+      <div class="card" data-modal
+           data-type="video"
+           data-src="videos/analogwaves.mp4"
+           data-title="Analog Waves"
+           data-desc="// Replace this text with your description of Analog Waves">
+        <video src="videos/analogwaves.mp4" muted preload="metadata"></video>
+        <div class="card__meta">
+          <p class="card__title">Analog Waves</p>
+          <p class="card__hint">Click to play →</p>
+        </div>
+      </div>
+
+      <div class="card" data-modal
+           data-type="video"
+           data-src="videos/digital-villian.mp4"
+           data-title="Digital Villain"
+           data-desc="// Replace this text with your description of Digital Villain">
+        <video src="videos/digital-villian.mp4" muted preload="metadata"></video>
+        <div class="card__meta">
+          <p class="card__title">Digital Villain</p>
+          <p class="card__hint">Click to play →</p>
+        </div>
+      </div>
+
+      <div class="card" data-modal
+           data-type="video"
+           data-src="videos/enterthevoid.mp4"
+           data-title="Enter The Void"
+           data-desc="// Replace this text with your description of Enter the Void">
+        <video src="videos/enterthevoid.mp4" muted preload="metadata"></video>
+        <div class="card__meta">
+          <p class="card__title">Enter The Void</p>
+          <p class="card__hint">Click to play →</p>
+        </div>
+      </div>
+
+      <div class="card" data-modal
+           data-type="video"
+           data-src="videos/tv-glitch.mp4"
+           data-title="TV Glitch"
+           data-desc="// Replace this text with your description of TV Glitch">
+        <video src="videos/tv-glitch.mp4" muted preload="metadata"></video>
+        <div class="card__meta">
+          <p class="card__title">TV Glitch</p>
+          <p class="card__hint">Click to play →</p>
+        </div>
+      </div>
+
     </div>
-    <div class="card">
-      <video controls preload = "metadata" width="100%">
-        <source src="videos/digital-villian.mp4" type="video/mp4">
-      </video>
-      <p>Digital Villian</p>
-    </div>
-    <div class="card">
-      <video controls preload = "metadata" width="100%">
-        <source src="videos/enterthevoid.mp4" type="video/mp4">
-      </video>
-      <p>Enter The Void</p>
-    </div>
-    <div class="card">
-      <video controls preload = "metadata" width="100%">
-        <source src="videos/tv-glitch.mp4" type="video/mp4">
-      </video>
-      <p>TV Glitch</p>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal-overlay">
+    <div class="modal">
+      <button class="modal__close">[ ESC ] Close</button>
+      <div class="modal__audio-visual" style="display:none;"></div>
+      <div class="modal__media"></div>
+      <div class="modal__body">
+        <p class="modal__eyebrow">// VIDEO</p>
+        <h2 class="modal__title"></h2>
+        <p class="modal__desc"></p>
+      </div>
     </div>
   </div>
 
-  <!-- Back to Top Button -->
-  <button id = "backToTop" class = "back-to-top">↑ Back to Top</button>
-
-  <!-- Footer -->
-  <footer class = "site-footer">
-    Created by Noah Jones
+  <footer class="site-footer">
+    <span>Created by Noah C. Jones</span>
   </footer>
 
-  <script src = "js/main.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/portfolio.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  
+<head>
+  <meta charset="utf-8">
+  <title>The Choice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body data-page="choice">
+
+  <!-- Cinematic vignette overlay -->
+  <div class="vignette"></div>
+
+  <!-- Flash effect on pill click -->
+  <div class="flash-overlay" id="flashOverlay"></div>
+
+  <div class="choice-container">
+
+    <h1 class="choice-headline" id="choiceHeadline">This is your last chance.</h1>
+
+    <!-- Morpheus image that will be replaced with an image of Noah Jones drawn as Morpheus-->
+    <div class="morpheus-wrapper">
+      <img
+        src="img/morpheus-red-pill-blue-pill.jpg"
+        alt="Morpheus holding the red and blue pill"
+        class="morpheus-img"
+        id="morpheusImg"
+      >
+      <!-- Pills positioned over Morpheus's hands -->
+      <button id="redPill"  class="pill red-pill"  title="Red pill"></button>
+      <button id="bluePill" class="pill blue-pill" title="Blue pill"></button>
+    </div>
+
+    <!-- Description of what each pill will lead the user to-->
+    <p class="choice-subtext blinking" id="choiceSubtext">
+      Take the <span class="red-text">red pill</span> — you stay in Wonderland.<br>
+      Take the <span class="blue-text">blue pill</span> — the story ends.
+    </p>
+
+  </div>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>

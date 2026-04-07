@@ -2,48 +2,142 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>3D Models</title>
+  <title>Noah C. Jones — 3D Models</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="icon" href="img/favicon_io/favicon.ico" type="/img/favicon_io">
+  <link rel="stylesheet" href="css/portfolio.css">
+  <link rel="icon" href="img/favicon_io/favicon.ico">
   <script src="https://kit.fontawesome.com/d0041be44b.js" crossorigin="anonymous"></script>
 </head>
 
 <body data-page="portfolio">
-  <div class="navbar">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="portfolio.html" class="nav-logo"> <span>NCJ</span> // HOME</a>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="art.html">Art</a></li>
+      <li><a href="3DModels.html" class="active">3D Models</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="github.html">GitHub</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
     <div class="hamburger-menu">
-      <i class="fa fa-bars menu-toggle"></i> 
+      <i class="fa fa-bars menu-toggle"></i>
     </div>
+
+    <!-- Dropdown Links -->
     <div class="dropdown-links">
       <a href="portfolio.html" class="dropdown-link">Home</a>
-      <a href="art.html" class="dropdown-link">Art</a>
-      <a href="videos.html" class="dropdown-link">Videos</a>
-      <a href="github.html" class="dropdown-link">GitHub</a>
-      <a href="music.html" class="dropdown-link">Music</a>
-      <a href="contact.html" class="dropdown-link">Contact</a>
+      <a href="art.html"       class="dropdown-link">Art</a>
+      <a href="3DModels.html"  class="dropdown-link">3D Models</a>
+      <a href="videos.html"    class="dropdown-link">Videos</a>
+      <a href="music.html"     class="dropdown-link">Music</a>
+      <a href="github.html"    class="dropdown-link">GitHub</a>
+      <a href="contact.html"   class="dropdown-link">Contact</a>
     </div>
-  </div>
+  </nav>
 
-  <header class="site-header">
-    <h1 id="typewriter">3D Models </h1>
+  <!-- Page header -->
+  <header class="page-header">
+    <p class="page-header__eyebrow">// SECTION 02</p>
+    <h1 class="page-header__title">3D Models</h1>
+    <div class="page-header__line"></div>
   </header>
 
-  <div class="grid">
-    <div class="card">
-      <img src="img/NefariousGuy.jpeg" alt="3D Model 1">
-      <p>NefariousGuy</p>
+  <!--  Carousel  -->
+  <section class="carousel-section">
+    <p class="carousel-label">Featured — <span id="slideCounter">01 / 02</span></p>
+    <div class="carousel-outer">
+      <div class="carousel-track">
+
+        <div class="carousel-slide" data-modal
+             data-type="image"
+             data-src="img/NefariousGuy.jpeg"
+             data-title="NefariousGuy"
+             data-desc="// Replace this text with your description of NefariousGuy">
+          <img src="img/NefariousGuy.jpeg" alt="NefariousGuy">
+          <div class="carousel-slide__meta">
+            <p class="carousel-slide__index">01 / 02</p>
+            <h2 class="carousel-slide__title">NefariousGuy</h2>
+          </div>
+        </div>
+
+        <div class="carousel-slide" data-modal
+             data-type="image"
+             data-src="img/Big_eyez.jpeg"
+             data-title="BigEyez"
+             data-desc="// Replace this text with your description of BigEyez">
+          <img src="img/Big_eyez.jpeg" alt="BigEyez">
+          <div class="carousel-slide__meta">
+            <p class="carousel-slide__index">02 / 02</p>
+            <h2 class="carousel-slide__title">BigEyez</h2>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel-btn carousel-btn--prev" aria-label="Previous">&#8592;</button>
+      <button class="carousel-btn carousel-btn--next" aria-label="Next">&#8594;</button>
     </div>
-    <div class="card">
-      <img src="img/Big_eyez.jpeg" alt="3D Model 2">
-      <p>BigEyez</p>
+    <div class="carousel-dots"></div>
+  </section>
+
+  <!-- ── Grid ── -->
+  <section class="grid-section">
+    <p class="grid-section__label">All Models</p>
+    <div class="grid">
+
+      <div class="card" data-modal
+           data-type="image"
+           data-src="img/NefariousGuy.jpeg"
+           data-title="NefariousGuy"
+           data-desc="// A creature with very few words but nefarious intentions... ">
+        <img src="img/NefariousGuy.jpeg" alt="NefariousGuy">
+        <div class="card__meta">
+          <p class="card__title">NefariousGuy</p>
+          <p class="card__hint">Click to expand →</p>
+        </div>
+      </div>
+
+      <div class="card" data-modal
+           data-type="image"
+           data-src="img/Big_eyez.jpeg"
+           data-title="BigEyez"
+           data-desc="// Description coming soon... ">
+        <img src="img/Big_eyez.jpeg" alt="BigEyez">
+        <div class="card__meta">
+          <p class="card__title">BigEyez</p>
+          <p class="card__hint">Click to expand →</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal-overlay">
+    <div class="modal">
+      <button class="modal__close">[ ESC ] Close</button>
+      <div class="modal__audio-visual" style="display:none;"></div>
+      <div class="modal__media"></div>
+      <div class="modal__body">
+        <p class="modal__eyebrow">// 3D MODEL</p>
+        <h2 class="modal__title"></h2>
+        <p class="modal__desc"></p>
+      </div>
     </div>
   </div>
 
   <footer class="site-footer">
-    Created by Noah Jones
+    <span>Created by Noah C. Jones</span>
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/portfolio.js"></script>
 </body>
 </html>
