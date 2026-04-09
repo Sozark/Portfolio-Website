@@ -1,44 +1,37 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
-  <title>Noah C. Jones — Github</title>
-  <meta name="description" content="About Noah C. Jones — designer, engineer, creator.">
-  <meta name="viewport"    content="width=device-width, initial-scale=1">
+  <title>Noah C. Jones — GitHub</title>
+  <meta name="description" content="GitHub profile — Noah C. Jones, designer, engineer, creator.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="img/favicon_io/favicon.ico">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/portfolio.css">
-  <link rel="stylesheet" href="css/about-contact.css">
+  <link rel="stylesheet" href="css/github.css">
   <script src="https://kit.fontawesome.com/d0041be44b.js" crossorigin="anonymous"></script>
 </head>
+<body data-page="portfolio">
 
-<body>
-
-   <!-- Navbar -->
+  <!-- Navbar -->
   <nav class="navbar">
-
-    <a href="portfolio.html" class="nav-logo"><span>NCJ</span> // HOME</a>
-
-    <!-- Naviagtion Links-->
+    <a href="portfolio.html" class="nav-logo"><span>NCJ</span> // PORTFOLIO</a>
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
       <li><a href="art.html">Art</a></li>
       <li><a href="3DModels.html">3D Models</a></li>
       <li><a href="videos.html">Videos</a></li>
       <li><a href="music.html">Music</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="github.html" class="active">GitHub</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-
     <div class="hamburger-menu">
       <i class="fa fa-bars menu-toggle"></i>
     </div>
-
-    <!-- Navigation Links-->
     <div class="dropdown-links">
       <a href="portfolio.html" class="dropdown-link">Home</a>
+      <a href="about.html"     class="dropdown-link">About</a>
       <a href="art.html"       class="dropdown-link">Art</a>
       <a href="3DModels.html"  class="dropdown-link">3D Models</a>
       <a href="videos.html"    class="dropdown-link">Videos</a>
@@ -46,24 +39,44 @@
       <a href="github.html"    class="dropdown-link">GitHub</a>
       <a href="contact.html"   class="dropdown-link">Contact</a>
     </div>
-
   </nav>
- <!-- Page Header -->
+
+  <!-- Page header -->
   <header class="page-header">
-    <p class="page-header__eyebrow">// SECTION 04</p>
-    <h1 class="page-header__title">GITHUB</h1>
+    <p class="page-header__eyebrow">// SECTION 05</p>
+    <h1 class="page-header__title">GitHub</h1>
     <div class="page-header__line"></div>
   </header>
 
-  <!-- Grid Section-->
-  <div class="grid">
-    <div class="card">
-      <a href="https://github.com/Sozark" class="github-link" target="_blank">
-        <i class="fa-brands fa-github github-icon"></i>
-        <p>Visit My GitHub!</p>
+  <!-- GitHub layout -->
+  <main class="github-layout">
+
+    <!-- Profile card -->
+    <div class="github-profile-card">
+      <div class="github-profile-card__icon">
+        <i class="fa-brands fa-github"></i>
+      </div>
+      
+      <div class="github-profile-card__text">
+        <p class="github-profile-card__label">// REPOSITORY</p>
+        <p class="github-profile-card__name">Sozark</p>
+        <p class="github-profile-card__sub">github.com/Sozark</p>
+      </div>
+    </div>
+
+    <!-- CTA card -->
+    <div class="github-cta-wrap">
+      <p class="github-cta-wrap__eyebrow">// ACCESS_REPO.exe</p>
+      <p class="github-cta-wrap__desc">
+        Browse source code, projects, and experiments. All work lives in the archive.
+      </p>
+      <a href="https://github.com/Sozark" class="github-btn" target="_blank" rel="noopener">
+        <i class="fa-brands fa-github"></i>
+        <span>Open Repository</span>
       </a>
     </div>
-  </div>
+
+  </main>
 
   <footer class="site-footer">
     <span>Created by Noah C. Jones</span>

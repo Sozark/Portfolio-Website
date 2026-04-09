@@ -1,20 +1,25 @@
 /* ==========================================================================
    about-contact.css  —  Shared styles for About and Contact pages
-   Imports the portfolio design system variables from portfolio.css
    ========================================================================== */
 
-/* ── About Layout ── */
+/* ── About Layout ─────────────────────────────────────────────────────────
+   Uses the same 40px left/right padding as .page-header in portfolio.css
+   so cards align flush with the header text on every viewport.
+   ──────────────────────────────────────────────────────────────────────── */
 .about-layout {
-  padding: 0 40px 60px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 900px;       /* cap width on very wide screens               */
+  padding: 48px 40px 32px;  /* matches page-header: padding 48px 40px 32px  */
+  margin: 0;             /* never auto-center; pin to left like the header */
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 32px;
-  max-width: 860px;
 }
 
-/* Identity block */
+/* ── Identity block ── */
 .about-identity {
   display: flex;
   align-items: center;
@@ -73,7 +78,7 @@
   color: var(--green);
   letter-spacing: 3px;
   text-transform: uppercase;
-  text-shadow: 0 0 16px rgba(0,255,65,0.35);
+  text-shadow: 0 0 16px rgba(0, 255, 65, 0.35);
   margin-bottom: 4px;
 }
 
@@ -83,7 +88,7 @@
   letter-spacing: 2px;
 }
 
-/* Bio card */
+/* ── Bio card ── */
 .about-card {
   border: 1px solid var(--border);
   background: var(--surface);
@@ -121,7 +126,7 @@
 
 .about-card__body:last-child { margin-bottom: 0; }
 
-/* Skills */
+/* ── Skills ── */
 .about-skills { animation: fadeUp 0.6s ease 0.2s both; }
 
 .about-skills__label {
@@ -155,12 +160,12 @@
   padding: 8px 16px;
   border: 1px solid var(--border);
   background: var(--surface2);
+  font-family: var(--font-mono);
   font-size: 0.72em;
   letter-spacing: 2px;
   color: var(--text-dim);
   text-transform: uppercase;
   transition: border-color 0.2s, color 0.2s, box-shadow 0.2s;
-  font-family: var(--font-mono);
 }
 
 .skill-chip:hover {
@@ -177,12 +182,15 @@
 
 .skill-chip:hover i { color: var(--green-dim); }
 
-/* ── Contact Layout ── */
+/* ── Contact Layout ─────────────────────────────────────────────────────── */
 .contact-layout {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 720px;
   padding: 0 40px 60px;
+  margin: 0;
   position: relative;
   z-index: 1;
-  max-width: 680px;
 }
 
 .contact-form-wrap {
@@ -193,7 +201,6 @@
   animation: fadeUp 0.6s ease both;
 }
 
-/* Corner brackets */
 .contact-form-wrap::before {
   content: '';
   position: absolute;
@@ -255,6 +262,8 @@
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
   resize: vertical;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .form-field input::placeholder,
@@ -269,9 +278,7 @@
   box-shadow: 0 0 12px var(--green-glow);
 }
 
-.form-field textarea {
-  min-height: 130px;
-}
+.form-field textarea { min-height: 130px; }
 
 /* Submit button */
 .contact-submit {
@@ -286,7 +293,6 @@
   padding: 12px 28px;
   cursor: pointer;
   transition: background 0.2s, box-shadow 0.2s, border-color 0.2s;
-  position: relative;
 }
 
 .contact-submit::before {
@@ -323,8 +329,8 @@
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
-  .about-layout    { padding: 0 20px 48px; }
-  .contact-layout  { padding: 0 20px 48px; }
-  .about-identity  { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .about-layout   { padding: 48px 40px 32px; }
+  .contact-layout { padding: 0 20px 48px; }
+  .about-identity { flex-direction: column; align-items: flex-start; gap: 16px; }
   .contact-form-wrap { padding: 24px 20px; }
 }
