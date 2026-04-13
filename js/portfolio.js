@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       track.style.transform = `translateX(-${current * 100}%)`;
       dots.forEach(d => d.classList.remove('active'));
       dots[current].classList.add('active');
+      
       if (counter) {
         const total = String(slides.length).padStart(2, '0');
         counter.textContent = `${String(current + 1).padStart(2, '0')} / ${total}`;
@@ -97,6 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
       mediaWrap.appendChild(vid);
 
     } else if (type === 'audio') {
+      
       /* Animated bars visual */
       if (audioVis) {
         audioVis.style.display = 'flex';

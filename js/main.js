@@ -1,5 +1,7 @@
+const page = document.body.dataset.page;
+
 document.addEventListener('DOMContentLoaded', () => {
-  const page = document.body.dataset.page;
+
 
   /* ===== TYPEWRITER EFFECT ===== */
   const typeEl = document.getElementById('typewriter');
@@ -63,6 +65,7 @@ function startMatrixRain() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.shadowBlur = 8;
     ctx.shadowColor = '#94f475';
+    
     for (let i = 0; i < drops; i++) {
       ctx.font = `${size[i]}px monospace`;
       ctx.fillStyle = colors[i % colors.length];

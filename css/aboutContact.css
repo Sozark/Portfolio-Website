@@ -10,7 +10,7 @@
   box-sizing: border-box;
   width: 100%;
   max-width: 900px;       /* cap width on very wide screens               */
-  padding: 48px 40px 32px;  /* matches page-header: padding 48px 40px 32px  */
+  padding: 0 40px 60px;  /* matches page-header: padding 48px 40px 32px  */
   margin: 0;             /* never auto-center; pin to left like the header */
   position: relative;
   z-index: 1;
