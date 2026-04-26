@@ -68,7 +68,6 @@
 .about-id-label {
   font-size: 0.62em;
   letter-spacing: 4px;
-  color: var(--text-muted);
   text-transform: uppercase;
   margin-bottom: 6px;
 }
@@ -84,7 +83,6 @@
 
 .about-id-role {
   font-size: 0.7em;
-  color: var(--text-dim);
   letter-spacing: 2px;
 }
 
@@ -118,7 +116,6 @@
 
 .about-card__body {
   font-size: 0.82em;
-  color: var(--text-dim);
   line-height: 1.9;
   letter-spacing: 0.4px;
   margin-bottom: 16px;
@@ -163,7 +160,6 @@
   font-family: var(--font-mono);
   font-size: 0.72em;
   letter-spacing: 2px;
-  color: var(--text-dim);
   text-transform: uppercase;
   transition: border-color 0.2s, color 0.2s, box-shadow 0.2s;
 }
@@ -317,6 +313,20 @@
   letter-spacing: 2px;
   color: var(--green-dim);
   text-transform: uppercase;
+}
+
+/* ── Skills categories ── */
+.skills-category {
+  margin-bottom: 1.5rem;
+}
+
+.skills-category__heading {
+  font-size: 0.6em;
+  letter-spacing: 3px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  opacity: 0.7;
 }
 
 .contact-confirm.visible { display: block; }

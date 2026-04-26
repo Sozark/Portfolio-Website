@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Noah C. Jones — Bubble Hero Case Study</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/portfolio.css">
+  <link rel="stylesheet" href="css/caseStudy.css">
+  <link rel="icon" href="img/favicon_io/favicon.ico">
+  <script src="https://kit.fontawesome.com/d0041be44b.js" crossorigin="anonymous"></script>
+</head>
+<body data-page="portfolio">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="portfolio.html" class="nav-logo"><span>NCJ</span> // HOME</a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="art.html">Art</a></li>
+      <li><a href="3DModels.html">3D Models</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="github.html">GitHub</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger-menu">
+      <i class="fa fa-bars menu-toggle"></i>
+    </div>
+    <div class="dropdown-links">
+      <a href="portfolio.html" class="dropdown-link">Home</a>
+      <a href="about.html"     class="dropdown-link">About</a>
+      <a href="art.html"       class="dropdown-link">Art</a>
+      <a href="3DModels.html"  class="dropdown-link">3D Models</a>
+      <a href="videos.html"    class="dropdown-link">Videos</a>
+      <a href="music.html"     class="dropdown-link">Music</a>
+      <a href="projects.html"  class="dropdown-link">Projects</a>
+      <a href="github.html"    class="dropdown-link">GitHub</a>
+      <a href="contact.html"   class="dropdown-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Back link -->
+  <a href="projects.html" class="cs-back">← Back to Projects</a>
+
+  <!-- Hero -->
+  <div class="cs-hero">
+    <p class="cs-hero__eyebrow">// CASE STUDY — GAME JAM · 1ST PLACE</p>
+    <h1 class="cs-hero__title">Bubble Hero</h1>
+    <p class="cs-hero__subtitle">
+      A top-down hack-and-slash game designed, built, and shipped
+      in 48 hours during a global game jam — winning 1st place for Best Overall Game.
+    </p>
+
+    <div class="cs-meta">
+      <div class="cs-meta__item">
+        <span class="cs-meta__label">// Role</span>
+        <span class="cs-meta__value"> Team Lead & Programmer</span>
+      </div>
+      <div class="cs-meta__item">
+        <span class="cs-meta__label">// Type</span>
+        <span class="cs-meta__value">Game Development</span>
+      </div>
+      <div class="cs-meta__item">
+        <span class="cs-meta__label">// Timeline</span>
+        <span class="cs-meta__value">48 Hours</span>
+      </div>
+      <div class="cs-meta__item">
+        <span class="cs-meta__label">// Stack</span>
+        <span class="cs-meta__value">Unity · C#</span>
+      </div>
+    </div>
+
+    <!-- Update href to actual repo or itch.io link -->
+    <a href="https://github.com/Sozark" class="cs-live-btn" target="_blank" rel="noopener">
+      <i class="fa-brands fa-github"></i>
+      View Repository
+    </a>
+  </div>
+
+  <!-- Banner -->
+  <div class="cs-banner">
+    <img src="img/BubbleHero.png" alt="Bubble Hero gameplay" class="cs-banner__img">
+      <i class="fa-solid fa-gamepad"></i>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="cs-body">
+
+    <!-- Context -->
+    <div class="cs-section">
+      <p class="cs-section__label">// 01 — The Challenge</p>
+      <h2 class="cs-section__heading">Design, build, and ship a game in 48 hours</h2>
+      <p class="cs-section__body">
+        A global game jam gives you a theme, a clock, and nothing else. The pressure
+        is real — every hour spent on scope that's too big is an hour you can't spend
+        on polish. The challenge isn't just technical. It's knowing what to cut,
+        what to prioritize, and how to keep a team moving when time is running out.
+      </p>
+      <div class="cs-callout">
+        <p>// What can you actually finish in 48 hours that feels complete and fun?</p>
+      </div>
+    </div>
+
+    <!-- Design Decisions -->
+    <div class="cs-section">
+      <p class="cs-section__label">// 02 — Design Decisions</p>
+      <h2 class="cs-section__heading">Scoping for a jam, not a studio</h2>
+      <p class="cs-section__body">
+        The top-down hack-and-slash genre was a deliberate choice — the camera angle
+        is simple to implement, combat is immediately readable, and the loop of
+        move-attack-survive is easy to understand without a tutorial.
+      </p>
+      <p class="cs-section__body">
+        Enemy AI was built using state-based logic — idle, chase, attack, dead —
+        keeping the behavior readable and debuggable under time pressure. Simple
+        systems that work reliably beat complex systems that break under crunch.
+      </p>
+      <div class="cs-tags">
+        <span class="cs-tag">Game Design</span>
+        <span class="cs-tag">State Machines</span>
+        <span class="cs-tag">Enemy AI</span>
+        <span class="cs-tag">Player Feel</span>
+        <span class="cs-tag">Scope Management</span>
+      </div>
+    </div>
+
+    <!-- What I Built -->
+    <div class="cs-section">
+      <p class="cs-section__label">// 03 — What I Built</p>
+      <h2 class="cs-section__heading">A complete game loop from scratch</h2>
+      <p class="cs-section__body">
+        As lead programmer and team lead, I was responsible for the core systems
+        that made the game feel like a game — not just a technical demo.
+      </p>
+      <div class="cs-outcomes">
+        <div class="cs-outcome">
+          <p class="cs-outcome__label">// System</p>
+          <p class="cs-outcome__value">Player Controller</p>
+        </div>
+        <div class="cs-outcome">
+          <p class="cs-outcome__label">// System</p>
+          <p class="cs-outcome__value">Enemy AI</p>
+        </div>
+        <div class="cs-outcome">
+          <p class="cs-outcome__label">// System</p>
+          <p class="cs-outcome__value">Combat Logic</p>
+        </div>
+        <div class="cs-outcome">
+          <p class="cs-outcome__label">// Result</p>
+          <p class="cs-outcome__value">1st Place — Best Overall</p>
+        </div>
+      </div>
+      <p class="cs-section__body" style="margin-top:1.5rem;">
+        Beyond the code, leading the team meant coordinating feature integration,
+        managing the build pipeline, and making the call on what got cut when
+        time ran short. Shipping on time was as much a leadership challenge
+        as a technical one.
+      </p>
+    </div>
+
+    <!-- Outcome -->
+    <div class="cs-section">
+      <p class="cs-section__label">// 04 — Outcome & Reflection</p>
+      <h2 class="cs-section__heading">What winning taught me</h2>
+      <p class="cs-section__body">
+        Winning Best Overall Game in a global jam with 48 hours on the clock confirmed
+        something important — constraints make you better. When you can't gold-plate
+        everything, you learn what actually matters to a player. Fun is a feeling,
+        and that feeling comes from small details: how a hit registers, how the camera
+        follows the player, how quickly enemies respond. Getting those right under
+        pressure was the real win.
+      </p>
+      <p class="cs-section__body">
+        // Edit this section to reflect your honest experience — what the jam theme was,
+        who was on your team, what you're most proud of, and what you'd improve.
+      </p>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <span>Created by Noah C. Jones</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/portfolio.css">
-  <link rel="stylesheet" href="css/about-contact.css">
+  <link rel="stylesheet" href="css/aboutContact.css">
   <script src="https://kit.fontawesome.com/d0041be44b.js" crossorigin="anonymous"></script>
 </head>
 <body data-page="portfolio">
@@ -22,27 +22,29 @@
       <li><a href="3DModels.html">3D Models</a></li>
       <li><a href="videos.html">Videos</a></li>
       <li><a href="music.html">Music</a></li>
+      <li><a href="projects.html">Projects</a></li>
       <li><a href="github.html">GitHub</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
     <div class="hamburger-menu">
       <i class="fa fa-bars menu-toggle"></i>
     </div>
     <div class="dropdown-links">
+      <a href="portfolio.html" class="dropdown-link">Home</a>
       <a href="about.html"     class="dropdown-link">About</a>
       <a href="art.html"       class="dropdown-link">Art</a>
       <a href="3DModels.html"  class="dropdown-link">3D Models</a>
       <a href="videos.html"    class="dropdown-link">Videos</a>
       <a href="music.html"     class="dropdown-link">Music</a>
-      <a href="projects.html" class="dropdown-link">Projects</a>
+      <a href="projects.html"  class="dropdown-link">Projects</a>
       <a href="github.html"    class="dropdown-link">GitHub</a>
-      <a href="portfolio.html" class="dropdown-link">Home</a>
+      <a href="contact.html"   class="dropdown-link">Contact</a>
     </div>
   </nav>
 
   <!-- Page header -->
   <header class="page-header">
-    <p class="page-header__eyebrow">// SECTION 05</p>
+    <p class="page-header__eyebrow">// SECTION 07</p>
     <h1 class="page-header__title">Contact</h1>
     <div class="page-header__line"></div>
   </header>
@@ -52,7 +54,21 @@
     <div class="contact-form-wrap">
       <p class="form-eyebrow">// OPEN_CHANNEL.exe — Send a transmission</p>
 
-      <form class="contact-form" id="contactForm">
+      <!--
+        FORMSPREE SETUP:
+        1. Go to formspree.io and sign up
+        2. Create a new form — copy the URL it gives you
+        3. Replace YOUR_FORMSPREE_URL below with that URL
+        4. Replace YOUR_PORTFOLIO_URL with your live domain
+      -->
+      <form
+        class="contact-form"
+        id="contactForm"
+        action="https://formspree.io/f/mnjlynwv"
+        method="POST"
+      >
+        <input type="hidden" name="_next" value="YOUR_PORTFOLIO_URL/contact.html?sent=true">
+        <input type="text" name="_gotcha" style="display:none">
 
         <div class="form-field">
           <label for="name">// Name</label>
@@ -70,7 +86,6 @@
         </div>
 
         <button type="submit" class="contact-submit">Transmit</button>
-
       </form>
 
       <p class="contact-confirm" id="confirmMsg">
@@ -84,7 +99,12 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script src="js/contact.js"></script>
+  <script>
+    if (window.location.search.includes('sent=true')) {
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('confirmMsg').style.display = 'block';
+    }
+  </script>
 
 </body>
 </html>

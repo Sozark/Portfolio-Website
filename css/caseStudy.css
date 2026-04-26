@@ -1,0 +1,276 @@
+/* ── case-study.css ── */
+
+.cs-hero {
+  padding: 4rem 20px 3rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.cs-hero__eyebrow {
+  font-family: 'Courier New', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: #0f0;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem;
+  text-shadow: 0 0 5px #0f0;
+}
+
+.cs-hero__title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  margin: 0 0 1rem;
+  color: #0f0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 10px #0f0;
+  font-family: 'Courier New', monospace;
+}
+
+.cs-hero__subtitle {
+  font-family: 'Courier New', monospace;
+  font-size: 0.88rem;
+  color: #0f0;
+  margin: 0 0 2rem;
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+.cs-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid #0f0;
+  border-bottom: 1px solid #0f0;
+  margin-bottom: 3rem;
+}
+
+.cs-meta__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.cs-meta__label {
+  font-family: 'Courier New', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #0f0;
+  opacity: 0.6;
+}
+
+.cs-meta__value {
+  font-family: 'Courier New', monospace;
+  font-size: 0.82rem;
+  color: #0f0;
+}
+
+/* Live site button */
+.cs-live-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: black;
+  background: #0f0;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 1.5rem;
+  border: 2px solid #0f0;
+  cursor: pointer;
+}
+
+.cs-live-btn:hover {
+  background: black;
+  color: #0f0;
+  box-shadow: 0 0 15px #0f0;
+}
+
+.cs-live-btn--outline {
+  background: transparent;
+  color: #0f0;
+  border: 2px solid #0f0;
+}
+
+.cs-live-btn--outline:hover {
+  background: #0f0;
+  color: black;
+  box-shadow: 0 0 15px #0f0;
+}
+
+/* Banner image */
+.cs-banner {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto 3rem;
+  padding: 0 20px;
+}
+
+.cs-banner__img {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  display: block;
+  border: 2px solid #0f0;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+/* Fallback banner when no screenshot */
+.cs-banner__placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  background: #0a0a0a;
+  border: 2px solid #0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs-banner__placeholder i {
+  font-size: 4rem;
+  opacity: 0.15;
+  color: #0f0;
+}
+
+/* Body content */
+.cs-body {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 20px 5rem;
+}
+
+.cs-section {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #0f0;
+}
+
+.cs-section:last-child {
+  border-bottom: none;
+}
+
+.cs-section__label {
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #0f0;
+  margin: 0 0 0.75rem;
+  text-shadow: 0 0 5px #0f0;
+}
+
+.cs-section__heading {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0f0;
+  margin: 0 0 1rem;
+  letter-spacing: -0.01em;
+  font-family: 'Courier New', monospace;
+  text-shadow: 0 0 8px #0f0;
+}
+
+.cs-section__body {
+  font-family: 'Courier New', monospace;
+  font-size: 0.88rem;
+  color: #0f0;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.cs-section__body + .cs-section__body {
+  margin-top: 1rem;
+}
+
+/* Highlight callout */
+.cs-callout {
+  border-left: 2px solid #0f0;
+  padding: 1rem 1.25rem;
+  background: rgba(0, 255, 0, 0.04);
+  margin: 1.5rem 0;
+  box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.05);
+}
+
+.cs-callout p {
+  font-family: 'Courier New', monospace;
+  font-size: 0.88rem;
+  color: #0f0;
+  margin: 0;
+  line-height: 1.7;
+  text-shadow: 0 0 5px #0f0;
+}
+
+/* Tech tags */
+.cs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.cs-tag {
+  font-family: 'Courier New', monospace;
+  font-size: 0.67rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid #0f0;
+  padding: 0.25rem 0.6rem;
+  color: #0f0;
+  background: black;
+}
+
+/* Outcomes grid */
+.cs-outcomes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.cs-outcome {
+  border: 1px solid #0f0;
+  padding: 1rem 1.1rem;
+  background: black;
+}
+
+.cs-outcome__label {
+  font-family: 'Courier New', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #0f0;
+  opacity: 0.6;
+  margin: 0 0 0.4rem;
+}
+
+.cs-outcome__value {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #0f0;
+  margin: 0;
+  text-shadow: 0 0 5px #0f0;
+}
+
+/* Back link */
+.cs-back {
+  font-family: 'Courier New', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0f0;
+  text-decoration: none;
+  padding: 1.5rem 20px 0;
+  max-width: 860px;
+  margin: 0 auto;
+  display: block;
+  transition: text-shadow 0.2s ease;
+}
+
+.cs-back:hover {
+  text-shadow: 0 0 10px #0f0;
+}

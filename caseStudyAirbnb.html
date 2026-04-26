@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Noah C. Jones — AI Airbnb Finder Case Study</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/portfolio.css">
+  <link rel="stylesheet" href="css/caseStudy.css">
+  <link rel="icon" href="img/favicon_io/favicon.ico">
+  <script src="https://kit.fontawesome.com/d0041be44b.js" crossorigin="anonymous"></script>
+</head>
+<body data-page="portfolio">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="portfolio.html" class="nav-logo"><span>NCJ</span> // HOME</a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="art.html">Art</a></li>
+      <li><a href="3DModels.html">3D Models</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="github.html">GitHub</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger-menu">
+      <i class="fa fa-bars menu-toggle"></i>
+    </div>
+    <div class="dropdown-links">
+      <a href="portfolio.html" class="dropdown-link">Home</a>
+      <a href="about.html"     class="dropdown-link">About</a>
+      <a href="art.html"       class="dropdown-link">Art</a>
+      <a href="3DModels.html"  class="dropdown-link">3D Models</a>
+      <a href="videos.html"    class="dropdown-link">Videos</a>
+      <a href="music.html"     class="dropdown-link">Music</a>
+      <a href="projects.html"  class="dropdown-link">Projects</a>
+      <a href="github.html"    class="dropdown-link">GitHub</a>
+      <a href="contact.html"   class="dropdown-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Back link -->
+  <a href="projects.html" class="cs-back">← Back to Projects</a>
+
+  <!-- Hero -->
+  <div class="cs-hero">
+    <p class="cs-hero__eyebrow">// CASE STUDY — AI APPLICATION · IN DEVELOPMENT</p>
+    <h1 class="cs-hero__title">AI Airbnb Finder</h1>
+    <p class="cs-hero__subtitle">
+      An AI-powered application that analyzes Airbnb listing data to surface
+      personalized recommendations — moving beyond basic filters to understand
+      what a traveler actually wants.
+    </p>
+
+    <div class="cs-meta">
+      <div class="cs-meta__item">
+        <span class="cs-meta__label">// Role</span>
+        <span class="cs-meta__value">Designer & Developer</span>
+      </div>
+      <div class="cs-meta__item">
+        <span class="cs-meta__label">// Type</span>
+        <span class="cs-meta__value">AI Application</span>
+      </div>
+      <div class="cs-meta__item">
+        <span class="cs-meta__label">// Status</span>
+        <span class="cs-meta__value">In Development</span>
+      </div>
+      <div class="cs-meta__item">
+        <span class="cs-meta__label">// Stack</span>
+        <span class="cs-meta__value">Python · AI · Data Analysis</span>
+      </div>
+    </div>
+
+    <a href="https://github.com/Sozark" class="cs-live-btn cs-live-btn--outline" target="_blank" rel="noopener">
+      <i class="fa-brands fa-github"></i>
+      View Repository
+    </a>
+  </div>
+
+  <!-- Banner -->
+  <div class="cs-banner">
+    <!-- Replace with Figma mockup screenshot when available -->
+    <!-- <img src="img/screenshots/airbnb-finder.png" alt="AI Airbnb Finder mockup" class="cs-banner__img"> -->
+    <div class="cs-banner__placeholder">
+      <i class="fa-solid fa-house"></i>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="cs-body">
+
+    <!-- Problem -->
+    <div class="cs-section">
+      <p class="cs-section__label">// 01 — The Problem</p>
+      <h2 class="cs-section__heading">Finding a good Airbnb takes too long</h2>
+      <p class="cs-section__body">
+        Airbnb's search filters are broad — location, price, dates, guests.
+        But the things that actually make a stay great are harder to filter for:
+        neighborhood vibe, host responsiveness, how accurate the photos are,
+        whether it's actually quiet at night. Travelers spend hours reading
+        reviews trying to piece together what an algorithm should surface automatically.
+      </p>
+      <div class="cs-callout">
+        <p>// What if you could describe what you want in plain language and get listings
+        that actually match — not just listings that fit the filters?</p>
+      </div>
+    </div>
+
+    <!-- Approach -->
+    <div class="cs-section">
+      <p class="cs-section__label">// 02 — Design Approach</p>
+      <h2 class="cs-section__heading">Natural language over rigid filters</h2>
+      <p class="cs-section__body">
+        The core concept is a conversational interface — a user describes their
+        ideal stay in their own words, and the AI analyzes listing data, reviews,
+        and host history to surface the best matches ranked by actual fit, not
+        just availability.
+      </p>
+      <p class="cs-section__body">
+        The UX challenge is making AI output feel trustworthy. Users need to
+        understand why a listing was recommended, not just that it was. The design
+        focuses on transparency — showing the reasoning behind each result so
+        the user stays in control.
+      </p>
+      <div class="cs-tags">
+        <span class="cs-tag">Conversational UI</span>
+        <span class="cs-tag">AI Integration</span>
+        <span class="cs-tag">Data Analysis</span>
+        <span class="cs-tag">User Research</span>
+        <span class="cs-tag">Python</span>
+      </div>
+    </div>
+
+    <!-- Current Progress -->
+    <div class="cs-section">
+      <p class="cs-section__label">// 03 — Current Progress</p>
+      <h2 class="cs-section__heading">Where the project stands today</h2>
+      <p class="cs-section__body">
+        The project is currently in active development. The data pipeline for
+        ingesting and analyzing Airbnb listing data is underway, and the
+        recommendation logic is being designed around user preference modeling.
+      </p>
+      <div class="cs-outcomes">
+        <div class="cs-outcome">
+          <p class="cs-outcome__label">// Done</p>
+          <p class="cs-outcome__value">Problem Definition</p>
+        </div>
+        <div class="cs-outcome">
+          <p class="cs-outcome__label">// Done</p>
+          <p class="cs-outcome__value">Data Research</p>
+        </div>
+        <div class="cs-outcome">
+          <p class="cs-outcome__label">// In Progress</p>
+          <p class="cs-outcome__value">AI Pipeline</p>
+        </div>
+        <div class="cs-outcome">
+          <p class="cs-outcome__label">// Upcoming</p>
+          <p class="cs-outcome__value">UI Build</p>
+        </div>
+      </div>
+      <p class="cs-section__body" style="margin-top:1.5rem;">
+        // Update this section as the project progresses. This case study
+        is intentionally kept live during development. 
+      </p>
+    </div>
+
+    <!-- Vision -->
+    <div class="cs-section">
+      <p class="cs-section__label">// 04 — Vision</p>
+      <h2 class="cs-section__heading">What this becomes when it's finished</h2>
+      <p class="cs-section__body">
+        The end goal is a tool that genuinely saves travelers time and reduces
+        the anxiety of booking blind. A stay that matches what you actually
+        wanted — not what an algorithm thought you wanted based on your last
+        three bookings. That's the problem worth solving.
+      </p>
+      <p class="cs-section__body">
+        I wanted to make vacationing more streamlined for everyone. So, regardless on if you've been traveling for years
+        or if this is your first time traveling StayFinder will be able to assist all who use it.
+      </p>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <span>Created by Noah C. Jones</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

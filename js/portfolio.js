@@ -129,11 +129,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
+    document.body.classList.add('modal-open');    /* ← disable scanline */
   }
 
   function closeModal() {
     overlay.classList.remove('open');
     document.body.style.overflow = '';
+    document.body.classList.remove('modal-open'); /* ← restore scanline */
 
     /* Stop any playing media */
     mediaWrap.querySelectorAll('video, audio').forEach(m => {
