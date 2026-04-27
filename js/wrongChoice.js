@@ -53,12 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---- Navigate back to choice page with fade ---- */
+  /* ---- Navigate back to welcome page with fade ---- */
   function goBack() {
     const overlay = document.getElementById('flashOverlay');
     overlay.classList.add('active');
     setTimeout(() => {
-      window.location.href = 'choice.html';
+      window.location.href = 'welcome.html';
     }, 500);
   }
 
