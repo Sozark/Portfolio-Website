@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Noah C. Jones — BandBuilder Case Study</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/portfolio.css">
+  <link rel="stylesheet" href="css/caseStudy.css">
+  <link rel="icon" href="img/favicon_io/favicon.ico">
+  <script src="https://kit.fontawesome.com/d0041be44b.js" crossorigin="anonymous"></script>
+</head>
+<body data-page="portfolio">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="portfolio.html" class="nav-logo"><span>NCJ</span> // HOME</a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="art.html">Art</a></li>
+      <li><a href="3DModels.html">3D Models</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="github.html">GitHub</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger-menu">
+      <i class="fa fa-bars menu-toggle"></i>
+    </div>
+    <div class="dropdown-links">
+      <a href="portfolio.html" class="dropdown-link">Home</a>
+      <a href="about.html"     class="dropdown-link">About</a>
+      <a href="art.html"       class="dropdown-link">Art</a>
+      <a href="3DModels.html"  class="dropdown-link">3D Models</a>
+      <a href="videos.html"    class="dropdown-link">Videos</a>
+      <a href="music.html"     class="dropdown-link">Music</a>
+      <a href="projects.html"  class="dropdown-link">Projects</a>
+      <a href="github.html"    class="dropdown-link">GitHub</a>
+      <a href="contact.html"   class="dropdown-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Back link -->
+  <a href="projects.html" class="cs-back">← Back to Projects</a>
+
+  <!-- Hero -->
+  <div class="cs-hero">
+    <p class="cs-hero__eyebrow">// CASE STUDY — UNITY GAME · ACCESSIBILITY DESIGN</p>
+    <h1 class="cs-hero__title">BandBuilder</h1>
+    <p class="cs-hero__subtitle">
+      A Unity-based music game and DAW hybrid designed for children with
+      autism and other accessibility needs — where every player interaction
+      produces a musical output and no failure states exist. Built with a
+      team of 4+ and tested with real users aged 5-8.
+    </p>
+
+    <div class="cs-meta">
+      <div class="cs-meta__item">
+        <span class="cs-meta__label">// Role</span>
+        <span class="cs-meta__value">UI/UX Designer · Game Designer · Developer</span>
+      </div>
+      <div class="cs-meta__item">
+        <span class="cs-meta__label">// Type</span>
+        <span class="cs-meta__value">Accessibility-Focused Music Game</span>
+      </div>
+      <div class="cs-meta__item">
+        <span class="cs-meta__label">// Team</span>
+        <span class="cs-meta__value">4+ Members</span>
+      </div>
+      <div class="cs-meta__item">
+        <span class="cs-meta__label">// Stack</span>
+        <span class="cs-meta__value">Unity · C#</span>
+      </div>
+      <div class="cs-meta__item">
+        <span class="cs-meta__label">// Users Tested</span>
+        <span class="cs-meta__value">Children Ages 5–8</span>
+      </div>
+    </div>
+
+    <!-- Update href to your itch.io link when live -->
+    <a href="YOUR_ITCHIO_LINK" class="cs-live-btn" target="_blank" rel="noopener">
+      <i class="fa-solid fa-gamepad"></i>
+      Play on itch.io
+    </a>
+  </div>
+
+  <!-- Banner -->
+  <div class="cs-banner">
+    <!-- Replace with actual screenshot when available -->
+    <!-- <img src="img/screenshots/bandbuilder.png" alt="BandBuilder gameplay" class="cs-banner__img"> -->
+    <div class="cs-banner__placeholder">
+      <i class="fa-solid fa-drum"></i>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="cs-body">
+
+    <!-- Challenge -->
+    <div class="cs-section">
+      <p class="cs-section__label">// 01 — The Challenge</p>
+      <h2 class="cs-section__heading">Making music creation accessible to every child</h2>
+      <p class="cs-section__body">
+        Music games typically reward speed, precision, and pattern recognition
+        — skills that can be barriers rather than invitations for children with
+        autism or other accessibility needs. BandBuilder was designed to flip
+        that model entirely. The goal was a music experience where the process
+        of playing felt rewarding regardless of technical skill — closer to a
+        creative instrument than a performance test.
+      </p>
+      <div class="cs-callout">
+        <p>// How do you design a music game that feels like creative
+        expression rather than a test of ability?</p>
+      </div>
+    </div>
+
+    <!-- Design Approach -->
+    <div class="cs-section">
+      <p class="cs-section__label">// 02 — Design Approach</p>
+      <h2 class="cs-section__heading">Modular systems built for expressive play</h2>
+      <p class="cs-section__body">
+        The core design decision was to build BandBuilder as a hybrid between
+        a game and a DAW — a digital audio workstation — giving players genuine
+        creative agency rather than just reaction-based gameplay. This meant
+        designing systems where every interaction produced satisfying audio
+        output, not just correct or incorrect states.
+      </p>
+      <p class="cs-section__body">
+        Modular architecture was central to this approach. Audio logic, UI state,
+        and gameplay systems were built as independent modules — each responsible
+        for one thing and communicating through clear interfaces. This made it
+        possible to adjust accessibility features like input sensitivity, visual
+        contrast, and audio feedback volume without rewriting core gameplay logic.
+      </p>
+      <p class="cs-section__body">
+        Every layer of the design was built with accessibility in mind from the
+        start — not as an afterthought. High contrast UI, adjustable audio
+        feedback intensity, large touch targets, and predictable consistent
+        interaction patterns were foundational decisions, not additions.
+      </p>
+      <div class="cs-tags">
+        <span class="cs-tag">Accessibility Design</span>
+        <span class="cs-tag">Inclusive UX</span>
+        <span class="cs-tag">Music Game</span>
+        <span class="cs-tag">DAW Hybrid</span>
+        <span class="cs-tag">Unity</span>
+        <span class="cs-tag">C#</span>
+        <span class="cs-tag">Audio Systems</span>
+        <span class="cs-tag">Modular Architecture</span>
+      </div>
+    </div>
+
+    <!-- User Research -->
+    <div class="cs-section">
+      <p class="cs-section__label">// 03 — User Research & Testing</p>
+      <h2 class="cs-section__heading">Testing with the people who matter most</h2>
+      <p class="cs-section__body">
+        BandBuilder was tested with children aged 5 to 8 across a range of
+        accessibility needs. Observing real play sessions revealed how children
+        naturally approached the instrument — which interactions felt intuitive,
+        which caused frustration, and where the audio feedback needed adjustment
+        to avoid sensory discomfort.
+      </p>
+      <div class="cs-outcomes">
+        <div class="cs-outcome">
+          <p class="cs-outcome__label">// Observed</p>
+          <p class="cs-outcome__value">Interaction Patterns</p>
+        </div>
+        <div class="cs-outcome">
+          <p class="cs-outcome__label">// Observed</p>
+          <p class="cs-outcome__value">Sensory Response</p>
+        </div>
+        <div class="cs-outcome">
+          <p class="cs-outcome__label">// Observed</p>
+          <p class="cs-outcome__value">Creative Engagement</p>
+        </div>
+        <div class="cs-outcome">
+          <p class="cs-outcome__label">// Observed</p>
+          <p class="cs-outcome__value">UI Clarity</p>
+        </div>
+      </div>
+      <p class="cs-section__body" style="margin-top:1.5rem;">
+        Children don't perform for researchers — they simply play or they don't.
+        That honesty made every testing session more valuable than any internal
+        review. Each observation directly shaped the next iteration of the design,
+        from visual contrast adjustments to audio intensity controls.
+      </p>
+    </div>
+
+    <!-- What We Built -->
+    <div class="cs-section">
+      <p class="cs-section__label">// 04 — What We Built</p>
+      <h2 class="cs-section__heading">A music game that meets players where they are</h2>
+      <p class="cs-section__body">
+        BandBuilder combines real-time audio interaction with gameplay systems
+        designed from the ground up for accessibility. Players create music
+        through interaction without needing prior musical knowledge or fine
+        motor precision. The hybrid DAW model means outputs are always musical
+        — there are no wrong answers, only different sounds.
+      </p>
+      <div class="cs-outcomes">
+        <div class="cs-outcome">
+          <p class="cs-outcome__label">// Feature</p>
+          <p class="cs-outcome__value">Real-Time Audio Interaction</p>
+        </div>
+        <div class="cs-outcome">
+          <p class="cs-outcome__label">// Feature</p>
+          <p class="cs-outcome__value">DAW Hybrid Gameplay</p>
+        </div>
+        <div class="cs-outcome">
+          <p class="cs-outcome__label">// Feature</p>
+          <p class="cs-outcome__value">No Failure States</p>
+        </div>
+        <div class="cs-outcome">
+          <p class="cs-outcome__label">// Feature</p>
+          <p class="cs-outcome__value">High Contrast UI</p>
+        </div>
+        <div class="cs-outcome">
+          <p class="cs-outcome__label">// Feature</p>
+          <p class="cs-outcome__value">Modular Architecture</p>
+        </div>
+        <div class="cs-outcome">
+          <p class="cs-outcome__label">// Users Tested</p>
+          <p class="cs-outcome__value">Children Ages 5–8</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Outcome -->
+    <div class="cs-section">
+      <p class="cs-section__label">// 05 — Outcome & Reflection</p>
+      <h2 class="cs-section__heading">What this project changed about how I design</h2>
+      <p class="cs-section__body">
+        BandBuilder was one of the most demanding projects I've worked on because
+        the constraints were human constraints, not technical ones. Every system
+        had to work for a child who might experience sound, light, and interaction
+        completely differently from the person designing it.
+      </p>
+      <p class="cs-section__body">
+        That discipline — designing for the edges of the user spectrum rather than
+        the assumed middle — is now baked into how I approach every project. When
+        I design a product card, a navigation system, or a form flow, I think about
+        the user who finds it hardest to use first. If it works for them, it works
+        for everyone.
+      </p>
+      <p class="cs-section__body">
+        The no failure states principle that drove BandBuilder's design is something
+        I carry into every UX decision. Error states, dead ends, and confusing
+        feedback aren't just bad for accessibility — they're bad design. BandBuilder
+        proved that removing them entirely makes the experience better for every user,
+        regardless of ability.
+      </p>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <span>Created by Noah C. Jones</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
