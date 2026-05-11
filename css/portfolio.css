@@ -885,3 +885,19 @@ body.modal-open::before {
   .grid { grid-template-columns: 1fr 1fr; gap: 8px; }
   .hub-grid { grid-template-columns: 1fr 1fr; }
 }
+
+.navbar,
+.page-header,
+.carousel-section,
+.grid-section,
+.hub-grid,
+.hub-intro,
+.modal-overlay,
+.site-footer,
+main,
+header,
+section,
+footer {
+  position: relative;
+  z-index: 1;
+}
