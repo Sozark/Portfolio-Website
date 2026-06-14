@@ -1,116 +1,199 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Noah C. Jones — Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/portfolio.css">
-  <link rel="icon" href="img/favicon_io/favicon.ico">
-  <script src="https://kit.fontawesome.com/d0041be44b.js" crossorigin="anonymous"></script>
-</head>
+<meta charset="utf-8">
+<title>Noah C. Jones — Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/portfolio.css">
+<link rel="icon" href="img/favicon_io/favicon.ico">
+<script src="https://kit.fontawesome.com/d0041be44b.js" crossorigin="anonymous"></script>
+<style>
+  /* ── Role block ───────────────────────────────────────────── */
+  .hub-role {
+    padding: 0 40px 1.5rem;   /* matches page-header & hub-intro exactly */
+    position: relative;
+    z-index: 1;
+    text-align: left;
+  }
 
+  /* Centered variant — swap class on the div to use:
+     class="hub-role hub-role--centered" */
+  .hub-role--centered {
+    text-align: center;
+  }
+
+  .hub-role__title {
+    font-family: var(--font-mono);
+    font-size: clamp(0.8rem, 1.8vw, 1rem);
+    font-weight: 400;
+    color: var(--green);
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
+    letter-spacing: 0.05em;
+    margin: 0 0 0.65rem;
+    line-height: 1.4;
+  }
+
+  .hub-role__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 0.65rem;
+    justify-content: flex-start;
+  }
+
+  .hub-role--centered .hub-role__tags {
+    justify-content: center;
+  }
+
+  .hub-role__tag {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid var(--border-hi);
+    padding: 0.2rem 0.6rem;
+    color: var(--text-dim);
+    background: transparent;
+  }
+
+  .hub-role__links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-start;
+  }
+
+  .hub-role--centered .hub-role__links {
+    justify-content: center;
+  }
+
+  .hub-role__link {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1px;
+    transition: color 0.2s ease, border-color 0.2s ease, text-shadow 0.2s ease;
+  }
+
+  .hub-role__link:hover {
+    color: var(--green);
+    text-shadow: 0 0 8px rgba(0, 255, 65, 0.4);
+    border-color: var(--green-dim);
+  }
+
+  @media (max-width: 768px) {
+    .hub-role { padding: 0 20px 1.25rem; }
+  }
+</style>
+</head>
 <body data-page="portfolio">
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <a href="portfolio.html" class="nav-logo"><span>NCJ</span> // HOME</a>
-
-    <!-- Dropdown Links-->
-    <ul class="nav-links">
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="art.html">Art</a></li>
-      <li><a href="3DModels.html">3D Models</a></li>
-      <li><a href="videos.html">Videos</a></li>
-      <li><a href="music.html">Music</a></li>
-      <li><a href="github.html">GitHub</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-
-    <div class="hamburger-menu">
-      <i class="fa fa-bars menu-toggle"></i>
-    </div>
-
-    <!-- Dropdown Links-->
-    <div class="dropdown-links">
-      <a href="projects.html" class="dropdown-link">Projects</a>
-      <a href="about.html"    class="dropdown-link">About</a>
-      <a href="art.html"      class="dropdown-link">Art</a>
-      <a href="3DModels.html" class="dropdown-link">3D Models</a>
-      <a href="videos.html"   class="dropdown-link">Videos</a>
-      <a href="music.html"    class="dropdown-link">Music</a>
-      <a href="github.html"   class="dropdown-link">GitHub</a>
-      <a href="contact.html"  class="dropdown-link">Contact</a>
-    </div>
-  </nav>
-
-  <!-- Page header -->
-  <header class="page-header">
-    <p class="page-header__eyebrow">// SIGNAL FOUND</p>
-    <h1 class="page-header__title">Noah C. Jones</h1>
-    <div class="page-header__line"></div>
-  </header>
-
-  <!-- Intro -->
-  <div class="hub-intro">
-    <p>
-      Designer, engineer, and creator working at the intersection of
-      <strong>code, art, and sound</strong>. Explore the archive below.
-    </p>
+<!-- Navbar -->
+<nav class="navbar">
+  <a href="portfolio.html" class="nav-logo"><span>NCJ</span> // HOME</a>
+  <ul class="nav-links">
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="art.html">Art</a></li>
+    <li><a href="3DModels.html">3D Models</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="github.html">GitHub</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="hamburger-menu">
+    <i class="fa fa-bars menu-toggle"></i>
   </div>
+  <div class="dropdown-links">
+    <a href="projects.html" class="dropdown-link">Projects</a>
+    <a href="about.html"    class="dropdown-link">About</a>
+    <a href="art.html"      class="dropdown-link">Art</a>
+    <a href="3DModels.html" class="dropdown-link">3D Models</a>
+    <a href="videos.html"   class="dropdown-link">Videos</a>
+    <a href="music.html"    class="dropdown-link">Music</a>
+    <a href="github.html"   class="dropdown-link">GitHub</a>
+    <a href="contact.html"  class="dropdown-link">Contact</a>
+  </div>
+</nav>
 
-  <!-- Hub grid -->
-  <main class="hub-grid">
+<!-- Page header -->
+<header class="page-header">
+  <p class="page-header__eyebrow">// SIGNAL FOUND</p>
+  <h1 class="page-header__title">Noah C. Jones</h1>
+  <div class="page-header__line"></div>
+</header>
 
-    <a href="projects.html"  class="hub-card">
-      <i class="fa-solid fa-folder-open"></i>
-      <p>Projects</p>
-    </a>
+<!-- Role block
+     LEFT-ALIGNED (matches name): class="hub-role"
+     CENTERED:                    class="hub-role hub-role--centered" -->
+<div class="hub-role">
+  <p class="hub-role__title">Design Engineer &nbsp;·&nbsp; I design it, build it, and ship it.</p>
+  <div class="hub-role__tags">
+    <span class="hub-role__tag">UI/UX Design</span>
+    <span class="hub-role__tag">Frontend Dev</span>
+    <span class="hub-role__tag">Figma → Code</span>
+    <span class="hub-role__tag">React · JS · CSS</span>
+  </div>
+  <div class="hub-role__links">
+    <a href="projects.html" class="hub-role__link">// View Work</a>
+    <a href="mailto:jonesncharbonnet@gmail.com" class="hub-role__link">// Contact</a>
+    <a href="noahcjones.dev" class="hub-role__link">// Resume</a>
+  </div>
+</div>
 
-    <a href="about.html"    class="hub-card">
-      <i class="fa-solid fa-user"></i>
-      <p>About</p>
-    </a>
+<!-- Intro -->
+<div class="hub-intro">
+  <p>
+    Designer, engineer, and creator working at the intersection of
+    <strong>code, art, and sound</strong>. Explore the archive below.
+  </p>
+</div>
 
-    <a href="art.html"      class="hub-card">
-      <i class="fa-solid fa-palette"></i>
-      <p>Art</p>
-    </a>
+<!-- Hub grid -->
+<main class="hub-grid">
+  <a href="projects.html"  class="hub-card">
+    <i class="fa-solid fa-folder-open"></i>
+    <p>Projects</p>
+  </a>
+  <a href="about.html"    class="hub-card">
+    <i class="fa-solid fa-user"></i>
+    <p>About</p>
+  </a>
+  <a href="art.html"      class="hub-card">
+    <i class="fa-solid fa-palette"></i>
+    <p>Art</p>
+  </a>
+  <a href="3DModels.html" class="hub-card">
+    <i class="fa-solid fa-cube"></i>
+    <p>3D Models</p>
+  </a>
+  <a href="videos.html"   class="hub-card">
+    <i class="fa-solid fa-video"></i>
+    <p>Videos</p>
+  </a>
+  <a href="music.html"    class="hub-card">
+    <i class="fa-solid fa-music"></i>
+    <p>Music</p>
+  </a>
+  <a href="github.html"   class="hub-card">
+    <i class="fa-brands fa-github"></i>
+    <p>GitHub</p>
+  </a>
+  <a href="contact.html"  class="hub-card">
+    <i class="fa-solid fa-phone"></i>
+    <p>Contact</p>
+  </a>
+</main>
 
-    <a href="3DModels.html" class="hub-card">
-      <i class="fa-solid fa-cube"></i>
-      <p>3D Models</p>
-    </a>
-    
-    <a href="videos.html"   class="hub-card">
-      <i class="fa-solid fa-video"></i>
-      <p>Videos</p>
-    </a>
+<footer class="site-footer">
+  <span>Created by Noah C. Jones</span>
+</footer>
 
-    <a href="music.html"    class="hub-card">
-      <i class="fa-solid fa-music"></i>
-      <p>Music</p>
-    </a>
-
-    <a href="github.html"   class="hub-card">
-      <i class="fa-brands fa-github"></i>
-      <p>GitHub</p>
-    </a>
-
-    <a href="contact.html"  class="hub-card">
-      <i class="fa-solid fa-phone"></i>
-      <p>Contact</p>
-    </a>
-
-
-  </main>
-
-  <footer class="site-footer">
-    <span>Created by Noah C. Jones</span>
-  </footer>
-
-  <script src="js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
