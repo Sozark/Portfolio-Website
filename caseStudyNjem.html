@@ -10,6 +10,63 @@
   <link rel="stylesheet" href="css/caseStudy.css">
   <link rel="icon" href="img/favicon_io/favicon.ico">
   <script src="https://kit.fontawesome.com/d0041be44b.js" crossorigin="anonymous"></script>
+  <style>
+    /* Figma embed — scoped to this page only */
+    .cs-figma-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 1px solid #0f0;
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+      background: #000;
+      overflow: hidden;
+      margin-top: 1.25rem;
+    }
+
+    .cs-figma-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .cs-figma-frame__placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      pointer-events: none;
+    }
+
+    .cs-figma-frame__placeholder i {
+      font-size: 2.5rem;
+      color: #0f0;
+      opacity: 0.15;
+    }
+
+    .cs-figma-frame__placeholder p {
+      font-family: 'Courier New', monospace;
+      font-size: 0.68rem;
+      color: #0f0;
+      opacity: 0.3;
+      letter-spacing: 0.1em;
+      text-align: center;
+      margin: 0;
+    }
+
+    .cs-figma-note {
+      font-family: 'Courier New', monospace;
+      font-size: 0.65rem;
+      color: #0f0;
+      opacity: 0.4;
+      letter-spacing: 0.08em;
+      margin-top: 0.6rem;
+      display: block;
+    }
+  </style>
 </head>
 <body data-page="caseStudy">
 
@@ -31,14 +88,14 @@
     </div>
     <div class="dropdown-links">
       <a href="portfolio.html" class="dropdown-link">Home</a>
-      <a href="about.html" class="dropdown-link">About</a>
-      <a href="art.html" class="dropdown-link">Art</a>
-      <a href="3DModels.html" class="dropdown-link">3D Models</a>
-      <a href="videos.html" class="dropdown-link">Videos</a>
-      <a href="music.html" class="dropdown-link">Music</a>
-      <a href="projects.html" class="dropdown-link">Projects</a>
-      <a href="github.html" class="dropdown-link">GitHub</a>
-      <a href="contact.html" class="dropdown-link">Contact</a>
+      <a href="about.html"     class="dropdown-link">About</a>
+      <a href="art.html"       class="dropdown-link">Art</a>
+      <a href="3DModels.html"  class="dropdown-link">3D Models</a>
+      <a href="videos.html"    class="dropdown-link">Videos</a>
+      <a href="music.html"     class="dropdown-link">Music</a>
+      <a href="projects.html"  class="dropdown-link">Projects</a>
+      <a href="github.html"    class="dropdown-link">GitHub</a>
+      <a href="contact.html"   class="dropdown-link">Contact</a>
     </div>
   </nav>
 
@@ -66,7 +123,7 @@
       </div>
       <div class="cs-meta__item">
         <span class="cs-meta__label">// Timeline</span>
-        <span class="cs-meta__value">Apr — Jun 2026</span>
+        <span class="cs-meta__value">Apr — Jun 2025</span>
       </div>
       <div class="cs-meta__item">
         <span class="cs-meta__label">// Stack</span>
@@ -82,9 +139,10 @@
       <i class="fa-solid fa-arrow-up-right-from-square"></i>
       View Live Site
     </a>
-    <a href="https://github.com/Sozark/NjemWebsite" class="cs-live-btn cs-live-btn--outline" target="_blank" rel="noopener">
-      <i class="fa-brands fa-github"></i>
-      Repository
+    <!-- UPDATE: replace href with your Figma embed share link once file is public -->
+    <a href="https://www.figma.com/community/file/1648548003911033349" class="cs-live-btn cs-live-btn--outline" target="_blank" rel="noopener">
+      <i class="fa-solid fa-pen-ruler"></i>
+      View Figma File
     </a>
   </div>
 
@@ -96,7 +154,7 @@
   <!-- Body -->
   <div class="cs-body">
 
-    <!-- Problem -->
+    <!-- Brief -->
     <div class="cs-section">
       <p class="cs-section__label">// 01 — The Brief</p>
       <h2 class="cs-section__heading">A professional home for an artist who had none</h2>
@@ -161,9 +219,33 @@
       </div>
     </div>
 
+    <!-- Figma Design File -->
+    <div class="cs-section">
+      <p class="cs-section__label">// 04 — Figma Design File</p>
+      <h2 class="cs-section__heading">From wireframes to shipped product</h2>
+      <p class="cs-section__body">
+        The full design system lives in Figma — wireframes, component library,
+        hi-fi mockups, and responsive layout specs. The file documents every
+        decision from initial layout exploration through final implementation.
+      </p>
+
+      <div class="cs-figma-frame">
+        <iframe
+          src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/0X5PLS4dJUYuC9xV0cxrZf/NJEM-Website?node-id=18-3"
+          allowfullscreen
+          title="NJEM Website — Figma Design File">
+        </iframe>
+        <div class="cs-figma-frame__placeholder" id="figmaPlaceholder">
+          <i class="fa-brands fa-figma"></i>
+          <p>// Loading design file...</p>
+        </div>
+      </div>
+      <span class="cs-figma-note">// Interactive — pan and zoom to explore the full file</span>
+    </div>
+
     <!-- What I Built -->
     <div class="cs-section">
-      <p class="cs-section__label">// 04 — What I Built</p>
+      <p class="cs-section__label">// 05 — What I Built</p>
       <h2 class="cs-section__heading">A complete digital EPK — one scroll, no friction</h2>
       <p class="cs-section__body">
         Every component was hand-coded in vanilla HTML, CSS, and JavaScript.
@@ -206,7 +288,7 @@
 
     <!-- Outcome -->
     <div class="cs-section">
-      <p class="cs-section__label">// 05 — Outcome &amp; Reflection</p>
+      <p class="cs-section__label">// 06 — Outcome &amp; Reflection</p>
       <h2 class="cs-section__heading">What shipping real client work taught me</h2>
       <p class="cs-section__body">
         NJEM was my first live client project — and that changes everything.
@@ -232,5 +314,17 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // Auto-hide placeholder once iframe loads successfully
+    const iframe = document.querySelector('.cs-figma-frame iframe');
+    const placeholder = document.getElementById('figmaPlaceholder');
+    if (iframe && placeholder) {
+      iframe.addEventListener('load', () => {
+        if (iframe.src && iframe.src.includes('figma.com')) {
+          placeholder.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
