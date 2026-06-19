@@ -2,60 +2,93 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Welcome</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noah C. Jones — Design Engineer</title>
+<meta name="description" content="Design engineer who turns Figma into hand-built, shipped UI — case studies, original art, motion graphics, music, and development work.">
+<link rel="canonical" href="https://noahcjones.dev/">
+
+<!-- Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
+
+<!-- Open Graph — LinkedIn, iMessage, Slack, Discord, WhatsApp, Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://noahcjones.dev/">
+<meta property="og:title" content="Noah C. Jones — Design Engineer">
+<meta property="og:description" content="I turn Figma into hand-built, shipped UI. Case studies, art, motion, music, and code.">
+<meta property="og:site_name" content="Noah C. Jones">
+<!-- TODO: export a branded 1200×630 card to img/og-card.png and switch this to it -->
+<meta property="og:image" content="https://noahcjones.dev/img/njem-hero.png">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Noah C. Jones — Design Engineer">
+<meta name="twitter:description" content="I turn Figma into hand-built, shipped UI. Case studies, art, motion, music, and code.">
+<meta name="twitter:image" content="https://noahcjones.dev/img/njem-hero.png">
+
+<!-- Stylesheets — these were missing; main.css is the whole pill scene -->
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/main.css">
+
 <style>
   .skip-link {
     position: fixed;
-    bottom: 2rem;
+    bottom: 2.5rem;
     left: 50%;
     transform: translateX(-50%);
     font-family: 'Courier New', monospace;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(0, 255, 0, 0.45);
+    color: #0f0;
     text-decoration: none;
-    border-bottom: 1px solid rgba(0, 255, 0, 0.2);
-    padding-bottom: 2px;
-    transition: color 0.2s ease, border-color 0.2s ease;
+    padding: 0.7rem 1.5rem;
+    border: 1px solid rgba(0, 255, 0, 0.6);
+    border-radius: 4px;
+    background: rgba(0, 255, 0, 0.05);
     z-index: 100;
     white-space: nowrap;
+    transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    animation: skipPulse 2.4s ease-in-out infinite;
   }
   .skip-link:hover {
-    color: rgba(0, 255, 0, 0.9);
-    border-color: rgba(0, 255, 0, 0.6);
+    color: #000;
+    background: #0f0;
+    box-shadow: 0 0 22px rgba(0, 255, 0, 0.7);
+    animation: none;
+  }
+  @keyframes skipPulse {
+    0%, 100% { box-shadow: 0 0 8px rgba(0, 255, 0, 0.2); border-color: rgba(0, 255, 0, 0.45); }
+    50%      { box-shadow: 0 0 18px rgba(0, 255, 0, 0.5); border-color: rgba(0, 255, 0, 0.85); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .skip-link { animation: none; }
   }
 </style>
 </head>
 <body data-page="choice">
-
 <!-- Cinematic vignette overlay -->
 <div class="vignette"></div>
-
 <!-- Flash effect on pill click -->
 <div class="flash-overlay" id="flashOverlay"></div>
 
 <div class="choice-container">
   <h1 class="choice-headline" id="choiceHeadline">Welcome.</h1>
 
-  <!-- Pills -->
   <div class="pills-wrap">
     <button id="redPill"  class="pill red-pill"  title="Red pill"></button>
     <button id="bluePill" class="pill blue-pill" title="Blue pill"></button>
   </div>
 
-  <!-- Subtext -->
   <p class="choice-subtext blinking" id="choiceSubtext">
     Take the <span class="red-text">red pill</span> — you stay in Wonderland.<br>
     Take the <span class="blue-text">blue pill</span> — the story ends.
   </p>
 </div>
 
-<!-- Skip link — subtle, always visible, bypasses the scene -->
-<a href="portfolio.html" class="skip-link">// skip → enter portfolio</a>
+<!-- Skip link — bottom center, bypasses the scene straight to the work -->
+<a href="portfolio.html" class="skip-link">// enter portfolio →</a>
 
 <script src="js/main.js"></script>
 </body>
