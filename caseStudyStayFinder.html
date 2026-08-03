@@ -184,8 +184,42 @@
           <p class="cs-outcome__label">// Resilience</p>
           <p class="cs-outcome__value">Graceful Demo Fallback</p>
         </div>
+        <div class="cs-outcome">
+          <p class="cs-outcome__label">// Abuse Protection</p>
+          <p class="cs-outcome__value">Rate Limiting, Fail-Open</p>
+        </div>
+        <div class="cs-outcome">
+          <p class="cs-outcome__label">// Product Ethics</p>
+          <p class="cs-outcome__value">No Fake Booking Flow</p>
+        </div>
       </div>
       <p class="cs-section__body" style="margin-top:1.5rem;">
+        Before the link went public, I added per-IP rate limiting at the
+        edge and a hard monthly spend cap — the cap exists specifically as a
+        backstop in case the rate limiter itself ever fails. And when it
+        does fail, it fails <em>open</em>: a Redis hiccup degrades to an
+        unthrottled request rather than taking the whole app down. That's a
+        deliberate tradeoff between cost protection and availability, not an
+        oversight.
+      </p>
+      <p class="cs-section__body">
+        I also learned that owning a mistake is part of the job. An early
+        commit accidentally hardcoded a live Mapbox token directly in the
+        client-side code. Instead of quietly fixing it, I documented the
+        token as burned in the deployment notes, rotated it, and wrote down
+        why — so the next credential doesn't end up in a commit either.
+      </p>
+      <p class="cs-section__body">
+        The most deliberate decision in the whole app might be the smallest
+        one: there's no "Book Now" button. Real booking requires
+        affiliate-level API access I don't have yet, so rather than fake a
+        booking flow that can't actually confirm a reservation, every
+        listing links out to a real search on Airbnb or Booking.com. It's a
+        permanent product decision, not a launch-week shortcut — an AI
+        product should never let a confident-sounding interface promise
+        something it can't back up.
+      </p>
+      <p class="cs-section__body">
         On the design side, colors, spacing, and type are defined once as design
         tokens and synced straight into Figma via Tokens Studio, so design and
         code don't drift apart as the app grows. And because the app should
