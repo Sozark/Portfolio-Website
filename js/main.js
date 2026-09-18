@@ -51,7 +51,7 @@ function startMatrixRain() {
   canvas.style.height        = '100%';
   canvas.style.zIndex        = '-1';
   canvas.style.pointerEvents = 'none';
-  canvas.style.opacity       = '0.65';
+  canvas.style.opacity       = '0.4';
 
   document.body.appendChild(canvas);
 
@@ -60,7 +60,7 @@ function startMatrixRain() {
   canvas.height = window.innerHeight;
 
   const chars  = ['诶','比','西','迪','伊','吉','艾','杰','开','哦','屁','提','维','N','O','A','H','J','O','N','E','S'];
-  const drops  = 30;
+  const drops  = 18;
   const x = [], y = [], speed = [], size = [];
   const colors = ['#7dd4a8','#5aad82','#3d8a60','#2e6e4c'];  /* darker, muted greens */
 
