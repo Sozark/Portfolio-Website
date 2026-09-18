@@ -149,6 +149,13 @@ body::after {
   background: var(--black);
   border-bottom: 1px solid var(--border);
   z-index: 99;
+  /* Override main.css's leftover fade/slide-in animation — it has no
+     fill-mode, so the menu can render at its mid-animation opacity
+     (translucent, bleeding into page content behind it) instead of
+     settling fully opaque. */
+  animation: none;
+  opacity: 1;
+  transform: none;
 }
 
 .dropdown-links.active { display: flex; }
@@ -886,7 +893,6 @@ body.modal-open::before {
   .hub-grid { grid-template-columns: 1fr 1fr; }
 }
 
-.navbar,
 .page-header,
 .carousel-section,
 .grid-section,
