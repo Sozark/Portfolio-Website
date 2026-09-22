@@ -220,6 +220,16 @@ body::after {
   width: 200px;
 }
 
+.page-header--centered {
+  text-align: center;
+}
+
+.page-header--centered .page-header__line {
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(to right, transparent, var(--green-dim), transparent);
+}
+
 /* ==========================================================================
    CAROUSEL
    ========================================================================== */
