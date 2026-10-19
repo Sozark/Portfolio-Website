@@ -5,6 +5,20 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* =====================================================================
+     FORCE PLAY ALL BACKGROUND/GRID VIDEOS
+     ===================================================================== */
+  const gridVideos = document.querySelectorAll('video');
+  gridVideos.forEach(vid => {
+    vid.muted = true;
+    const playPromise = vid.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(error => {
+        console.warn('Autoplay prevented:', error);
+      });
+    }
+  });
+
+  /* =====================================================================
      CAROUSEL
      ===================================================================== */
 
@@ -49,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Swipe support */
     let startX = 0;
     track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-    track.addEventListener('touchend',   e => {
+    track.addEventListener('touchend', e => {
       const diff = startX - e.changedTouches[0].clientX;
       if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
     });
@@ -91,11 +105,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     } else if (type === 'video') {
       const vid = document.createElement('video');
-      vid.src        = src;
-      vid.controls   = true;
-      vid.autoplay   = true;
+      vid.src         = src;
+      vid.controls    = true;
+      vid.autoplay    = true;
+      vid.playsInline = true;
       vid.style.width = '100%';
       mediaWrap.appendChild(vid);
+      
+      const playPromise = vid.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(err => console.warn('Modal video play error:', err));
+      }
 
     } else if (type === 'audio') {
       
@@ -114,33 +134,37 @@ document.addEventListener('DOMContentLoaded', () => {
       aud.controls = true;
       aud.autoplay = true;
       mediaWrap.appendChild(aud);
+      aud.play();
     }
 
     /* Populate text */
-    titleEl.textContent = title;
+    if (titleEl) titleEl.textContent = title;
 
-    if (desc && !desc.startsWith('// Replace')) {
-      descEl.textContent = desc;
-      descEl.classList.remove('modal__desc--placeholder');
-    } else {
-      descEl.textContent = '// Description coming soon…';
-      descEl.classList.add('modal__desc--placeholder');
+    if (descEl) {
+      if (desc && !desc.startsWith('// Replace')) {
+        descEl.textContent = desc;
+        descEl.classList.remove('modal__desc--placeholder');
+      } else {
+        descEl.textContent = '// Description coming soon…';
+        descEl.classList.add('modal__desc--placeholder');
+      }
     }
 
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
-    document.body.classList.add('modal-open');    /* ← disable scanline */
+    document.body.classList.add('modal-open');
   }
 
   function closeModal() {
     overlay.classList.remove('open');
     document.body.style.overflow = '';
-    document.body.classList.remove('modal-open'); /* ← restore scanline */
+    document.body.classList.remove('modal-open');
 
-    /* Stop any playing media */
+    /* Stop any playing media and clean source */
     mediaWrap.querySelectorAll('video, audio').forEach(m => {
       m.pause();
-      m.src = '';
+      m.removeAttribute('src');
+      m.load();
     });
     mediaWrap.innerHTML = '';
     if (audioVis) {
@@ -155,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* Close button */
-  closeBtn  && closeBtn.addEventListener('click', closeModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
   /* Click outside modal box */
   overlay.addEventListener('click', e => {
