@@ -255,7 +255,7 @@ body::after {
   border: 1px solid var(--border);
   background: var(--surface);
   overflow: hidden;
-  max-width: 780px;
+  max-width: 1280px;
 }
 
 /* Corner brackets */
