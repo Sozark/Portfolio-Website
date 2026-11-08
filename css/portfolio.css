@@ -14,7 +14,6 @@
   --black:       #000000;
   --surface:     #030803;
   --surface2:    #070f07;
-  --border:      #0d2e0d;
   --border-hi:   #00ff41;
   --text:        #00ff41;
   --text-dim:    #36c64e;
@@ -42,13 +41,6 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.15) 2px,
-    rgba(0, 0, 0, 0.15) 4px
-  );
   pointer-events: none;
   z-index: 9998;
 }
@@ -303,7 +295,6 @@ body::after {
   object-fit: cover;
   display: block;
   transition: transform 0.6s ease, filter 0.4s ease;
-  filter: brightness(0.75) saturate(0.6);
 }
 
 .carousel-slide:hover img,
@@ -483,7 +474,6 @@ body::after {
   background: var(--surface);
   border: 1px solid var(--border);
   cursor: pointer;
-  overflow: hidden;
   aspect-ratio: 1 / 1;
   transition: border-color 0.25s, box-shadow 0.25s;
   text-decoration: none;
@@ -502,7 +492,6 @@ body::after {
   object-fit: cover;
   display: block;
   transition: transform 0.5s ease, filter 0.3s ease;
-  filter: brightness(0.7) saturate(0.5);
 }
 
 .card:hover img,

@@ -1,39 +1,78 @@
 /* ==========================================================================
-   portfolio.js  —  Carousel + Modal interactions
+   portfolio.js  —  Carousel + Modal + Video playback manager
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const track    = document.querySelector('.carousel-track');
+  const slides   = document.querySelectorAll('.carousel-slide');
+  const prevBtn  = document.querySelector('.carousel-btn--prev');
+  const nextBtn  = document.querySelector('.carousel-btn--next');
+  const dotsWrap = document.querySelector('.carousel-dots');
+  const counter  = document.getElementById('slideCounter');
+
+  let current   = 0;
+  let modalOpen = false;
+
   /* =====================================================================
-     FORCE PLAY ALL BACKGROUND/GRID VIDEOS
+     VIDEO PLAYBACK MANAGER
+     Only videos that are on screen, in the active carousel slide, and not
+     covered by the modal are allowed to play. Everything else is paused, so
+     the browser never decodes more than a few videos at once.
      ===================================================================== */
-  const gridVideos = document.querySelectorAll('video');
-  gridVideos.forEach(vid => {
-    vid.muted = true;
-    const playPromise = vid.play();
-    if (playPromise !== undefined) {
-      playPromise.catch(error => {
-        console.warn('Autoplay prevented:', error);
-      });
+
+  const videos   = Array.from(document.querySelectorAll('.carousel-slide video, .card video'));
+  const onScreen = new Set();
+
+  function shouldPlay(v) {
+    if (REDUCED || modalOpen || document.hidden || !onScreen.has(v)) return false;
+    const slide = v.closest('.carousel-slide');
+    return slide ? slide === slides[current] : true;
+  }
+
+  function syncVideos() {
+    videos.forEach(v => {
+      if (shouldPlay(v)) {
+        if (v.paused) v.play().catch(() => {});
+      } else if (!v.paused) {
+        v.pause();
+      }
+    });
+  }
+
+  if (videos.length) {
+    videos.forEach(v => {
+      v.muted       = true;
+      v.loop        = true;   // keeps previews moving without re-triggering play()
+      v.playsInline = true;
+    });
+
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) onScreen.add(e.target);
+          else onScreen.delete(e.target);
+        });
+        syncVideos();
+      }, { threshold: 0.25 });
+
+      videos.forEach(v => io.observe(v));
+    } else {
+      videos.forEach(v => onScreen.add(v));
+      syncVideos();
     }
-  });
+
+    document.addEventListener('visibilitychange', syncVideos);
+  }
 
   /* =====================================================================
      CAROUSEL
      ===================================================================== */
 
-  const track     = document.querySelector('.carousel-track');
-  const slides    = document.querySelectorAll('.carousel-slide');
-  const prevBtn   = document.querySelector('.carousel-btn--prev');
-  const nextBtn   = document.querySelector('.carousel-btn--next');
-  const dotsWrap  = document.querySelector('.carousel-dots');
-  const counter   = document.getElementById('slideCounter');
-
-  let current = 0;
-
   if (track && slides.length) {
 
-    /* Build dots */
     slides.forEach((_, i) => {
       const dot = document.createElement('button');
       dot.classList.add('carousel-dot');
@@ -48,59 +87,59 @@ document.addEventListener('DOMContentLoaded', () => {
     function goTo(index) {
       current = (index + slides.length) % slides.length;
       track.style.transform = `translateX(-${current * 100}%)`;
+
       dots.forEach(d => d.classList.remove('active'));
       dots[current].classList.add('active');
-      
+
       if (counter) {
         const total = String(slides.length).padStart(2, '0');
         counter.textContent = `${String(current + 1).padStart(2, '0')} / ${total}`;
       }
+
+      syncVideos();   // play the new slide's video, pause the old one
     }
 
-    prevBtn && prevBtn.addEventListener('click', () => goTo(current - 1));
-    nextBtn && nextBtn.addEventListener('click', () => goTo(current + 1));
+    if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
 
-    /* Swipe support */
     let startX = 0;
     track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
     track.addEventListener('touchend', e => {
       const diff = startX - e.changedTouches[0].clientX;
       if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
-    });
+    }, { passive: true });
   }
 
   /* =====================================================================
      MODAL
      ===================================================================== */
 
-  const overlay    = document.querySelector('.modal-overlay');
-  const modal      = document.querySelector('.modal');
-  const closeBtn   = document.querySelector('.modal__close');
-  const mediaWrap  = document.querySelector('.modal__media');
-  const titleEl    = document.querySelector('.modal__title');
-  const descEl     = document.querySelector('.modal__desc');
-  const audioVis   = document.querySelector('.modal__audio-visual');
+  const overlay   = document.querySelector('.modal-overlay');
+  if (!overlay) return;   // page has no modal
 
-  if (!overlay) return; // page has no modal
+  const closeBtn  = overlay.querySelector('.modal__close');
+  const mediaWrap = overlay.querySelector('.modal__media');
+  const titleEl   = overlay.querySelector('.modal__title');
+  const descEl    = overlay.querySelector('.modal__desc');
+  const audioVis  = overlay.querySelector('.modal__audio-visual');
 
   function openModal(trigger) {
     const type  = trigger.dataset.type;
     const src   = trigger.dataset.src;
-    const title = trigger.dataset.title  || '';
-    const desc  = trigger.dataset.desc   || '';
+    const title = trigger.dataset.title || '';
+    const desc  = trigger.dataset.desc  || '';
 
-    /* Clear previous content */
     mediaWrap.innerHTML = '';
     if (audioVis) {
       audioVis.innerHTML = '';
       audioVis.style.display = 'none';
     }
 
-    /* Build media element */
     if (type === 'image') {
       const img = document.createElement('img');
       img.src = src;
       img.alt = title;
+      img.decoding = 'async';
       mediaWrap.appendChild(img);
 
     } else if (type === 'video') {
@@ -109,17 +148,12 @@ document.addEventListener('DOMContentLoaded', () => {
       vid.controls    = true;
       vid.autoplay    = true;
       vid.playsInline = true;
+      vid.preload     = 'auto';
       vid.style.width = '100%';
       mediaWrap.appendChild(vid);
-      
-      const playPromise = vid.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(err => console.warn('Modal video play error:', err));
-      }
+      vid.play().catch(err => console.warn('Modal video play error:', err));
 
     } else if (type === 'audio') {
-      
-      /* Animated bars visual */
       if (audioVis) {
         audioVis.style.display = 'flex';
         for (let i = 0; i < 12; i++) {
@@ -134,10 +168,9 @@ document.addEventListener('DOMContentLoaded', () => {
       aud.controls = true;
       aud.autoplay = true;
       mediaWrap.appendChild(aud);
-      aud.play();
+      aud.play().catch(() => {});
     }
 
-    /* Populate text */
     if (titleEl) titleEl.textContent = title;
 
     if (descEl) {
@@ -152,7 +185,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
-    document.body.classList.add('modal-open');
+    document.body.classList.add('modal-open');   // main.js pauses canvas effects on this
+
+    modalOpen = true;
+    syncVideos();   // pause every background video while the modal is open
   }
 
   function closeModal() {
@@ -160,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
     document.body.classList.remove('modal-open');
 
-    /* Stop any playing media and clean source */
+    /* Release the modal's media so the browser can free memory */
     mediaWrap.querySelectorAll('video, audio').forEach(m => {
       m.pause();
       m.removeAttribute('src');
@@ -171,22 +207,23 @@ document.addEventListener('DOMContentLoaded', () => {
       audioVis.innerHTML = '';
       audioVis.style.display = 'none';
     }
+
+    modalOpen = false;
+    syncVideos();   // resume the visible previews
   }
 
-  /* Attach click to every [data-modal] trigger */
-  document.querySelectorAll('[data-modal]').forEach(trigger => {
-    trigger.addEventListener('click', () => openModal(trigger));
+  /* One delegated listener instead of one per card */
+  document.addEventListener('click', e => {
+    const trigger = e.target.closest('[data-modal]');
+    if (trigger) openModal(trigger);
   });
 
-  /* Close button */
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
-  /* Click outside modal box */
   overlay.addEventListener('click', e => {
     if (e.target === overlay) closeModal();
   });
 
-  /* ESC key */
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
   });

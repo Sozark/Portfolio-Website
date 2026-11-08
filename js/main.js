@@ -1,4 +1,9 @@
+/* ==========================================================================
+   main.js  —  Global scripts
+   ========================================================================== */
+
 const page = document.body.dataset.page;
+const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -7,11 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeEl) {
     const text = typeEl.textContent.trim();
     typeEl.textContent = '';
+    typeEl.classList.add('blinking');
     let i = 0;
     function type() {
       if (i < text.length) {
         typeEl.textContent += text.charAt(i++);
-        typeEl.classList.add('blinking');
         setTimeout(type, 80);
       }
     }
@@ -20,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ===== HAMBURGER MENU ===== */
   const menuToggle = document.querySelector('.menu-toggle');
-  const dropdown = document.querySelector('.dropdown-links');
+  const dropdown   = document.querySelector('.dropdown-links');
   if (menuToggle && dropdown) {
     menuToggle.addEventListener('click', () => {
       dropdown.classList.toggle('active');
@@ -31,134 +36,133 @@ document.addEventListener('DOMContentLoaded', () => {
   if (page === 'choice') startSnowfall();
   if (page === 'welcome' || page === 'portfolio') startMatrixRain();
 
-  /* ===== CHOICE PAGE PILLS ===== */
+  /* ===== CHOICE PAGE PILLS (single handler — was registered twice) ===== */
   if (page === 'choice') {
-    const redPill = document.getElementById('redPill');
+    const redPill  = document.getElementById('redPill');
     const bluePill = document.getElementById('bluePill');
-    if (redPill) redPill.addEventListener('click', () => window.location.href = 'portfolio.html');
-    if (bluePill) bluePill.addEventListener('click', () => window.location.href = 'wrongChoice.html');
+    const flash    = document.getElementById('flashOverlay');
+
+    function pillClick(destination) {
+      if (flash) {
+        flash.style.transition = 'opacity 0.05s ease';
+        flash.style.opacity    = '1';
+      }
+      setTimeout(() => { window.location.href = destination; }, 200);
+    }
+
+    if (redPill)  redPill.addEventListener('click',  () => pillClick('portfolio.html'));
+    if (bluePill) bluePill.addEventListener('click', () => pillClick('wrongChoice.html'));
   }
 });
 
-/* ===== MATRIX RAIN ===== */
-function startMatrixRain() {
+/* ==========================================================================
+   SHARED CANVAS HELPERS
+   ========================================================================== */
+
+function createBackgroundCanvas(opacity = 1) {
   const canvas = document.createElement('canvas');
-
-  canvas.style.position      = 'fixed';
-  canvas.style.top           = '0';
-  canvas.style.left          = '0';
-  canvas.style.width         = '100%';
-  canvas.style.height        = '100%';
-  canvas.style.zIndex        = '-1';
-  canvas.style.pointerEvents = 'none';
-  canvas.style.opacity       = '0.4';
-
+  Object.assign(canvas.style, {
+    position: 'fixed', top: '0', left: '0',
+    width: '100%', height: '100%',
+    zIndex: '-1', pointerEvents: 'none',
+    opacity: String(opacity)
+  });
   document.body.appendChild(canvas);
 
   const ctx = canvas.getContext('2d');
-  canvas.width  = window.innerWidth;
-  canvas.height = window.innerHeight;
+  const fit = () => {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+  };
+  fit();
+
+  /* Debounced: resizing fires dozens of events per second */
+  let timer;
+  window.addEventListener('resize', () => {
+    clearTimeout(timer);
+    timer = setTimeout(fit, 150);
+  });
+
+  return { canvas, ctx };
+}
+
+/* Runs `step(dt)` at a capped frame rate. dt is a 60fps-relative multiplier, so
+   motion speed looks identical regardless of the cap. Skips work entirely while
+   the tab is hidden or a modal is open. */
+function startLoop(step, fps = 30) {
+  if (REDUCED_MOTION) { step(1); return; }   // one static frame, no animation
+
+  const frameMs = 1000 / fps;
+  let last = performance.now();
+
+  function frame(now) {
+    requestAnimationFrame(frame);
+    const elapsed = now - last;
+    if (elapsed < frameMs) return;
+    last = now;
+    if (document.hidden || document.body.classList.contains('modal-open')) return;
+    step(Math.min(elapsed, 100) / 16.667);
+  }
+  requestAnimationFrame(frame);
+}
+
+/* ===== MATRIX RAIN ===== */
+function startMatrixRain() {
+  const { canvas, ctx } = createBackgroundCanvas(0.4);
 
   const chars  = ['诶','比','西','迪','伊','吉','艾','杰','开','哦','屁','提','维','N','O','A','H','J','O','N','E','S'];
+  const colors = ['#7dd4a8', '#5aad82', '#3d8a60', '#2e6e4c'];
   const drops  = 18;
-  const x = [], y = [], speed = [], size = [];
-  const colors = ['#7dd4a8','#5aad82','#3d8a60','#2e6e4c'];  /* darker, muted greens */
+  const x = [], y = [], speed = [], fonts = [];
 
   for (let i = 0; i < drops; i++) {
     x[i]     = Math.random() * canvas.width;
     y[i]     = Math.random() * canvas.height;
     speed[i] = Math.random() * 0.9 + 0.5;
-    size[i]  = Math.random() * 12 + 8;      /* slightly smaller */
+    fonts[i] = `${Math.floor(Math.random() * 12 + 8)}px monospace`;   // built once, not per frame
   }
 
-  function draw() {
+  startLoop(dt => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.shadowBlur  = 3;            /* softer glow: was 8 */
-    ctx.shadowColor = '#3d8a60';    /* darker shadow */
-
     for (let i = 0; i < drops; i++) {
-      ctx.font      = `${size[i]}px monospace`;
+      ctx.font      = fonts[i];
       ctx.fillStyle = colors[i % colors.length];
-      ctx.fillText(chars[Math.floor(Math.random() * chars.length)], x[i], y[i]);
-      y[i] += speed[i];
-      if (y[i] > canvas.height) y[i] = 0;
+      ctx.fillText(chars[(Math.random() * chars.length) | 0], x[i], y[i]);
+      y[i] += speed[i] * dt;
+      if (y[i] > canvas.height) {
+        y[i] = 0;
+        x[i] = Math.random() * canvas.width;   // also recovers drops stranded by a resize
+      }
     }
-    requestAnimationFrame(draw);
-  }
-  draw();
-
-  window.addEventListener('resize', () => {
-    canvas.width  = window.innerWidth;
-    canvas.height = window.innerHeight;
   });
 }
 
 /* ===== SNOWFALL ===== */
 function startSnowfall() {
-  const canvas = document.createElement('canvas');
+  const { canvas, ctx } = createBackgroundCanvas(1);
 
-  /* ── FIX: pin canvas behind all content ── */
-  canvas.style.position      = 'fixed';
-  canvas.style.top           = '0';
-  canvas.style.left          = '0';
-  canvas.style.width         = '100%';
-  canvas.style.height        = '100%';
-  canvas.style.zIndex        = '-1';
-  canvas.style.pointerEvents = 'none';
-
-  document.body.appendChild(canvas);
-
-  const ctx = canvas.getContext('2d');
-  canvas.width  = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  const chars  = ['❄','*','•','·'];
-  const drops  = 100;
-  const x = [], y = [], speed = [], size = [];
+  const chars = ['❄','*','•','·'];
+  const drops = 100;
+  const x = [], y = [], speed = [], fonts = [];
 
   for (let i = 0; i < drops; i++) {
     x[i]     = Math.random() * canvas.width;
     y[i]     = Math.random() * canvas.height;
     speed[i] = Math.random() * 1 + 0.5;
-    size[i]  = Math.random() * 20 + 10;
+    fonts[i] = `${Math.floor(Math.random() * 20 + 10)}px monospace`;
   }
 
-  function draw() {
+  startLoop(dt => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#cefbe4';
     for (let i = 0; i < drops; i++) {
-      ctx.font      = `${size[i]}px monospace`;
-      ctx.fillStyle = '#cefbe4';
-      ctx.fillText(chars[Math.floor(Math.random() * chars.length)], x[i], y[i]);
-      y[i] += speed[i];
-      if (y[i] > canvas.height) y[i] = 0;
+      ctx.font = fonts[i];
+      ctx.fillText(chars[(Math.random() * chars.length) | 0], x[i], y[i]);
+      y[i] += speed[i] * dt;
+      if (y[i] > canvas.height) {
+        y[i] = 0;
+        x[i] = Math.random() * canvas.width;
+      }
     }
-    requestAnimationFrame(draw);
-  }
-  draw();
-
-  window.addEventListener('resize', () => {
-    canvas.width  = window.innerWidth;
-    canvas.height = window.innerHeight;
   });
-}
-
-/* ===== PILL NAVIGATION (choice page only) ===== */
-if (page === 'choice') {
-  const redPill  = document.getElementById('redPill');
-  const bluePill = document.getElementById('bluePill');
-  const flash    = document.getElementById('flashOverlay');
-
-  function pillClick(destination) {
-    flash.style.opacity    = '1';
-    flash.style.transition = 'opacity 0.05s ease';
-    setTimeout(() => {
-      flash.style.transition = 'opacity 0.5s ease';
-      setTimeout(() => {
-        window.location.href = destination;
-      }, 150);
-    }, 60);
-  }
-
-  if (redPill)  redPill.addEventListener('click',  () => pillClick('portfolio.html'));
-  if (bluePill) bluePill.addEventListener('click', () => pillClick('wrongChoice.html'));
 }

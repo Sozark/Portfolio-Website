@@ -1,0 +1,66 @@
+/* ==========================================================================
+   performance.css  —  Load AFTER portfolio.css (and gridCenter.css).
+   Overrides the rendering rules that are expensive while videos are playing.
+   ========================================================================== */
+
+/* ---- 1. No CSS filters on <video> -----------------------------------------
+   A filter on a playing video is re-applied on the GPU every single frame.
+   The same dimmed look now comes from a flat dark overlay, which only needs
+   an opacity change on hover.                                              */
+.carousel-slide video,
+.card video {
+  filter: none;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide:hover video,
+.card:hover video {
+  filter: none;
+}
+
+.card:has(video)::before,
+.carousel-slide:has(video)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.card:has(video):hover::before,
+.carousel-slide:has(video):hover::before {
+  opacity: 0.4;
+}
+
+/* ---- 2. No backdrop blur on the sticky navbar ------------------------------
+   backdrop-filter re-blurs whatever is behind the bar on every scroll frame,
+   which is costly when videos are playing underneath.                       */
+.navbar {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  background: rgba(0, 0, 0, 0.97);
+}
+
+/* ---- 3. Audio bars only animate when hovered -------------------------------
+   Previously 6+ cards each ran an infinite animation, all the time.        */
+.card--audio .audio-bar {
+  animation-play-state: paused;
+}
+
+.card--audio:hover .audio-bar {
+  animation-play-state: running;
+}
+
+/* ---- 4. Respect reduced-motion ------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
